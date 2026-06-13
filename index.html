@@ -47,6 +47,12 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
 body {
     background-color: var(--bg-dark);
     color: var(--text-muted);
@@ -54,6 +60,9 @@ body {
     font-weight: 400;
     line-height: 1.65;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -324,6 +333,8 @@ header {
     padding: 20px 0;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    width: 100%;
+    max-width: 100%;
 }
 .carousel-container::-webkit-scrollbar {
     display: none;
@@ -1771,19 +1782,21 @@ footer {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     margin-top: 45px;
+    width: 100%;
+    max-width: 100%;
 }
 .vtestimonials-track::-webkit-scrollbar { display: none; }
 
-/* البطاقة العمودية بنسبة 6:19 */
+/* البطاقة - نسبة أقصر لعرض الشهادة كاملة بلا قص */
 .vtcard {
     position: relative;
     flex: 0 0 auto;
-    width: clamp(240px, 78vw, 300px);
-    aspect-ratio: 6 / 19;
+    width: clamp(280px, 80vw, 340px);
+    aspect-ratio: 9 / 13;
     border-radius: 26px;
     overflow: hidden;
     scroll-snap-align: center;
-    background: var(--bg-slate);
+    background: #000;
     border: 1px solid var(--line-border);
     box-shadow: var(--shadow-premium);
     transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease, box-shadow 0.35s ease;
@@ -1815,7 +1828,8 @@ footer {
 .vtcard img.vt-media {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background: #000;
     display: block;
 }
 
@@ -1928,7 +1942,7 @@ footer {
         padding: 25px;
     }
     .vtestimonials-section { padding: 60px 5%; }
-    .vtcard { width: clamp(230px, 82vw, 270px); }
+    .vtcard { width: clamp(260px, 86vw, 320px); }
 }
 
 /* Responsive & Mobile Optimizations */

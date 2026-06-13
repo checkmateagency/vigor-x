@@ -1,0 +1,3870 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigor-X — مكمّل غذائي طبيعي للطاقة و الحيوية | ROYSBIO</title>
+    <!-- استدعاء خط Cairo وأيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@400;700;800;900&family=Poppins:wght@400;600;700&display=swap');
+:root {
+    /* Global Design System - Premium Dark Palette (No absolute pitch black) */
+    --bg-dark: #111111;        /* Rich Charcoal Base */
+    --bg-slate: #161619;       /* Deep Slate for cards and structures */
+    --bg-ash: #1A1A1D;         /* Secondary dark shade */
+    
+    /* Brand Accents & High-Contrast CTA Colors */
+    --primary-red: #e11a36;    /* Crimson Red for high impact */
+    
+    /* ---------------------------------------------------- */
+    /* منظومة درجات الـ Amber والـ Golden الحركية المحدثة */
+    /* ---------------------------------------------------- */
+    --gold-light: #edc02d;     /* Golden الفاتح المشرق */
+    --gold-base: #d6b15e;      /* Premium Gold المستقر */
+    --gold-dark: #b8860b;      /* Dark Golden الملكي العميق */
+
+    --amber-light: #ff8c00;    /* Amber المضيء المبهج */
+    --amber-dark: #e07b00;     /* Amber الداكن المتوهج */
+    
+    /* Text Palette */
+    --text-white: #ffffff;     /* Crisp white for headlines */
+    --text-muted: #94a3b8;     /* Light soft gray for subtext */
+    
+    /* Structural Elements */
+    --line-border: rgba(255, 255, 255, 0.08);
+    --shadow-premium: 0 18px 50px -18px rgba(0, 0, 0, 0.85);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-muted);
+    font-family: 'Cairo', sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Latin Text rule (Numbers, English Words) */
+.lat, .lat-text, [class*="price"], .timer-unit span {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600;
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+/* Headings: Increased default sizes by 15-20% with Tajawal Black/ExtraBold */
+h1, h2, h3, h4 {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 900;
+    color: var(--text-white);
+    line-height: 1.25;
+    letter-spacing: -0.2px;
+}
+
+h1 { font-size: 52px !important; } /* Massive impact above the fold */
+h2 { font-size: 40px !important; } /* Impact sections */
+h3 { font-size: 24px !important; }
+h4 { font-size: 26px !important; }
+
+/* Subtext typography rule: Cleaner legibility using Cairo Regular/Medium */
+p, span, label, select, input {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 400;
+}
+p strong, p b {
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+/* Subtle Radial Gradients (Dark Red/Amber) behind key sections for depth */
+.has-gradient-bg, .hero, .checkout-section {
+    background: radial-gradient(circle at center, rgba(225, 26, 54, 0.12) 0%, rgba(255, 140, 0, 0.04) 60%, transparent 100%) !important;
+    background-color: var(--bg-dark) !important;
+}
+
+/* 1. SECTION: Urgency Banner (Sticky Text Strip) */
+.promo-bar {
+    background: linear-gradient(90deg, var(--primary-red), var(--amber-light));
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 15px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header (Clean, No exit links, Traps users in funnel) */
+header {
+    position: sticky;
+    top: 38px; /* Below promo bar */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 8%;
+    background-color: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--line-border);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+    font-family: 'Tajawal', sans-serif;
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo i, .logo span {
+    color: var(--gold-base);
+}
+
+/* Primary Top CTA Button: Premium Golden-Amber Gradient with Dark Text for Maximum Contrast */
+.btn-nav-order {
+    background: linear-gradient(135deg, var(--gold-light), var(--amber-light));
+    color: #111111 !important;
+    padding: 11px 26px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(237, 192, 45, 0.2);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-nav-order:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.35);
+}
+
+.btn-nav-order:active {
+    transform: translateY(1px);
+    background: linear-gradient(135deg, var(--amber-dark), var(--gold-dark)) !important;
+}
+
+/* SECTION 1: The Hero (Above the fold) */
+.hero {
+    padding: 80px 8% 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 55%;
+}
+
+/* Trust Badges - 20% Larger and Visually Distinct */
+.hero-badge {
+    background-color: var(--bg-slate);
+    color: var(--gold-base);
+    border: 2px solid var(--gold-base);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-premium);
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #cbd5e1;
+    margin-bottom: 35px;
+    text-align: justify;
+}
+
+.hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 460px;
+}
+
+/* Primary CTA Button: Golden to Amber Fluid Blend, Shifts to Deep Dark Amber & Gold when clicked */
+.btn-main-cta {
+    background: linear-gradient(135deg, var(--gold-light), var(--amber-light)) !important;
+    color: #111111 !important;
+    text-align: center;
+    padding: 18px 32px;
+    border-radius: 14px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(237, 192, 45, 0.25);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-main-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 140, 0, 0.4);
+}
+
+.btn-main-cta:active {
+    transform: translateY(1px) scale(0.98);
+    background: linear-gradient(135deg, var(--amber-dark), var(--gold-dark)) !important;
+    box-shadow: 0 5px 15px rgba(224, 123, 0, 0.35);
+}
+
+/* لمسة فاخرة مستوحاة: توهج نابض + لمعة عابرة على زر الطلب الرئيسي */
+.btn-main-cta {
+    position: relative;
+    overflow: hidden;
+    animation: ctaPulseGlow 2.4s ease-in-out infinite;
+}
+.btn-main-cta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-20deg);
+    animation: ctaShimmer 3.4s ease-in-out infinite;
+}
+@keyframes ctaPulseGlow {
+    0%, 100% { box-shadow: 0 10px 25px rgba(237, 192, 45, 0.25); }
+    50% { box-shadow: 0 14px 38px rgba(255, 140, 0, 0.45), 0 0 28px rgba(237, 192, 45, 0.3); }
+}
+@keyframes ctaShimmer {
+    0% { left: -120%; }
+    55%, 100% { left: 140%; }
+}
+
+/* Sub-CTA Text */
+.cta-guarantee {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 13.5px;
+    color: var(--gold-base);
+    font-weight: 600;
+    margin-top: 5px;
+    gap: 5px;
+}
+
+.cta-guarantee span i {
+    color: var(--gold-base);
+    margin-left: 5px;
+}
+
+.hero-visual {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.circle-bg {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(214, 177, 94, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.prod-image {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+/* SECTION 2: UGC Swipable Carousel Architecture */
+.carousel-container {
+    overflow-x: auto;
+    display: flex;
+    gap: 16px;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.tcard {
+    background-color: var(--bg-slate);
+    border: 1px solid var(--line-border);
+    border-radius: 16px;
+    padding: 24px;
+    min-width: 300px;
+    flex: 1 0 30%;
+    scroll-snap-align: start;
+    box-shadow: var(--shadow-premium);
+}
+
+/* SECTION 3 & 4: Features & Ingredients Grid */
+.lead-section, .features-section {
+    padding: 90px 8%;
+    
+    
+    border-top: 1px solid var(--line-border);
+    border-bottom: 1px solid var(--line-border);
+}
+
+.section-title {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 60px;
+}
+
+.section-title h2 {
+    color: var(--text-white);
+    margin-bottom: 15px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--bg-slate);
+    padding: 40px 25px;
+    border-radius: 16px;
+    border: 1px solid var(--line-border);
+    box-shadow: var(--shadow-premium);
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(214, 177, 94, 0.25);
+}
+
+/* Visuals: Emojis inside softly glowing, colored containers to pop */
+.f-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(160deg, rgba(214, 177, 94, 0.15), rgba(255, 140, 0, 0.08));
+    color: var(--gold-light);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(214, 177, 94, 0.2);
+    box-shadow: 0 0 20px rgba(214, 177, 94, 0.15);
+}
+
+/* Ingredients List Formatting */
+.ingredients-list {
+    background-color: var(--bg-slate);
+    border: 1px solid var(--line-border);
+    border-radius: 16px;
+    padding: 10px 25px;
+}
+.ingredient-row {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line-border);
+}
+.ingredient-row:last-child { border-bottom: none; }
+.ingredient-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 4px;
+}
+
+/* SECTION 5: The Funnel Pivot (Premium Exclusive Expert Service) */
+.expert-section {
+    background: linear-gradient(180deg, #1A140E 0%, #110E0B 100%) !important;
+    border-top: 2px solid var(--gold-base);
+    border-bottom: 2px solid var(--gold-base);
+    padding: 90px 8%;
+}
+.expert-section .section-title h2 {
+    color: var(--gold-base) !important;
+}
+.expert-disclaimer {
+    text-align: center;
+    color: #e3d8b8;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: -30px auto 45px;
+}
+
+/* Process Steps Visual Map */
+.process-map {
+    position: relative;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.process-map::before {
+    content: "";
+    position: absolute;
+    right: 22px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--gold-base), rgba(214, 177, 94, 0.15));
+}
+.process-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+}
+.step-number {
+    flex: 0 0 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--bg-dark);
+    border: 2px solid var(--gold-base);
+    color: var(--gold-base);
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 0 15px rgba(214, 177, 94, 0.25);
+}
+
+/* SECTION 6 & 7: The Final Conversion Form & Price Anchor */
+.checkout-section {
+    padding: 90px 8%;
+}
+
+.checkout-container {
+    background-color: var(--bg-slate);
+    border-radius: 24px;
+    box-shadow: var(--shadow-premium);
+    border: 1px solid var(--line-border);
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
+}
+
+.checkout-info {
+    background-color: rgba(17, 17, 17, 0.6);
+    padding: 50px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid var(--line-border);
+}
+
+.checkout-info h3 {
+    font-size: 36px !important;
+    color: var(--gold-base);
+    margin-bottom: 15px;
+}
+
+.price-box {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px 25px;
+    border-radius: 14px;
+    border: 1px solid var(--line-border);
+    width: fit-content;
+}
+
+.price-current {
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--text-white);
+}
+.price-current small {
+    font-size: 18px;
+    color: var(--gold-base);
+}
+
+/* Strict Clean Rules for Input Form Fields */
+.checkout-form-side {
+    padding: 50px;
+    flex: 1.2;
+    background-color: var(--bg-slate);
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--line-border);
+    border-radius: 12px;
+    outline: none;
+    font-size: 16px;
+    color: var(--text-white);
+    transition: 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--gold-light);
+    box-shadow: 0 0 12px rgba(237, 192, 45, 0.2);
+}
+
+/* Final CTA Button: Golden to Amber Fluid Blend, Handles Micro-interactions perfectly */
+.btn-submit-order {
+    background: linear-gradient(135deg, var(--gold-light), var(--amber-light)) !important;
+    color: #111111 !important;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(237, 192, 45, 0.2);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.btn-submit-order:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(255, 140, 0, 0.4);
+}
+
+.btn-submit-order:active {
+    transform: translateY(1px) scale(0.98);
+    background: linear-gradient(135deg, var(--amber-dark), var(--gold-dark)) !important;
+    box-shadow: 0 5px 15px rgba(224, 123, 0, 0.35);
+}
+
+/* Footer & Legal Claims */
+footer {
+    background-color: #09090b;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 13.5px;
+    border-top: 1px solid var(--line-border);
+}
+
+
+/* ======================================================== */
+/* تأثيرات ومؤثرات خرافية متطورة لقسم الميزات والفوائد الفاخر */
+/* ======================================================== */
+
+/* شريط الفوائد الصغير العلوي - مظهر كبسولة زجاجية مضيئة */
+.features-section-badge {
+    display: table;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, rgba(237, 192, 45, 0.1), rgba(255, 140, 0, 0.05));
+    color: var(--gold-light);
+    border: 1px solid rgba(237, 192, 45, 0.3);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), inset 0 0 8px rgba(237, 192, 45, 0.2);
+}
+
+/* تحديث حاوية الكروت لتستوعب الـ 5 ميزات بمرونة تامة */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* الكارت الاحترافي المطور بتأثير الزجاج الداكن والعمق ثلاثي الأبعاد */
+.feature-card {
+    background: linear-gradient(145deg, var(--bg-slate), #131316);
+    padding: 40px 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: var(--shadow-premium);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+    z-index: 1;
+}
+
+/* تأثير الخطوط الليزرية المخفية داخل الكارت */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(237, 192, 45, 0.03), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    z-index: -1;
+}
+
+/* تأثير التوهج والارتفاع الخرافي عند تمرير الفأرة (Hover Effect) */
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(237, 192, 45, 0.4);
+    box-shadow: 0 25px 50px -15px rgba(255, 140, 0, 0.25), 
+                0 0 30px -5px rgba(237, 192, 45, 0.1);
+}
+
+.feature-card:hover::before {
+    transform: translateX(100%);
+}
+
+/* حاوية الأيقونة المتطورة - تأثير هالة الطاقة المضيئة (Glow Aura) */
+.f-icon-wrapper {
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    z-index: 2;
+}
+
+/* خلفية التوهج النيون الناتجة من خلف الأيقونة */
+.f-icon-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--gold-light), var(--amber-light));
+    z-index: -1;
+    opacity: 0.3;
+    filter: blur(8px);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* زيادة شدة توهج النيون عند الـ Hover */
+.feature-card:hover .f-icon-wrapper::after {
+    opacity: 0.9;
+    filter: blur(12px);
+}
+
+/* ضبط حجم الأيقونة التعبيرية */
+.f-icon {
+    font-size: 28px;
+    z-index: 2;
+}
+
+/* العناوين والفقرات داخل الكارت */
+.feature-card h3 {
+    font-size: 23px !important;
+    color: var(--text-white);
+    margin-bottom: 12px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    transition: color 0.3s ease;
+}
+
+/* تحويل لون العنوان للذهبي المشرق عند التمرير */
+.feature-card:hover h3 {
+    color: var(--gold-light);
+}
+
+.feature-card p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* كبسولة المكونات الذكية الفاخرة أسفل الكارت */
+.ingredient-badge {
+    background: rgba(17, 17, 17, 0.8);
+    border: 1px solid rgba(237, 192, 45, 0.15);
+    padding: 8px 16px;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .ingredient-badge {
+    border-color: var(--amber-light);
+    background: rgba(17, 17, 17, 0.9);
+}
+
+.ingredient-badge .lat {
+    color: var(--gold-base) !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    display: block;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover .ingredient-badge .lat {
+    color: var(--text-white) !important;
+}
+
+/* صندوق الصراحة الاستثنائي - مظهر بطاقة أمان مخبرية فاخرة */
+.features-disclaimer-box {
+    text-align: right;
+    max-width: 850px;
+    margin: 60px auto 0;
+    background: linear-gradient(135deg, var(--bg-slate), #131316);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(237, 192, 45, 0.1);
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+/* توهج جانبي ديناميكي ملون */
+.features-disclaimer-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--gold-light), var(--amber-dark));
+}
+
+.disclaimer-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.disclaimer-icon {
+    font-size: 22px;
+    filter: drop-shadow(0 0 8px var(--gold-light));
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.features-disclaimer-box h4 {
+    font-size: 18px !important;
+    color: var(--gold-light);
+    font-weight: 800;
+}
+
+.features-disclaimer-box p {
+    font-size: 15px;
+    color: #cbd5e1;
+    line-height: 1.75;
+    margin: 0;
+}
+
+
+/* ======================================================== */
+/* الحركات السينمائية المتقدمة (Advanced Kinetic Animations) */
+/* ======================================================== */
+
+/* 1. تأثير النار المتصاعدة التخيلي (تأثير وهج حركي خلفي) */
+.pulse-fire {
+    animation: kineticFire 1.5s infinite alternate ease-in-out;
+}
+@keyframes kineticFire {
+    0% { transform: scale(1) translateY(0); filter: drop-shadow(0 0 2px rgba(255,140,0,0.2)); }
+    100% { transform: scale(1.1) translateY(-2px); filter: drop-shadow(0 0 12px rgba(255,68,0,0.8)); }
+}
+
+/* 2. تأثير وميض الصاعقة الكهربائي السريع المفاجئ */
+.flash-bolt {
+    animation: kineticBolt 2s infinite linear;
+}
+@keyframes kineticBolt {
+    0%, 90%, 100% { transform: scale(1) rotate(0deg); filter: blur(0); }
+    93% { transform: scale(1.15) rotate(-5deg); filter: drop-shadow(0 0 15px var(--gold-light)) brightness(1.5); }
+    96% { transform: scale(0.95) rotate(5deg); }
+}
+
+/* 3. تأثير تضخم القوة والنبض الفيزيائي */
+.muscle-flex {
+    animation: kineticMuscle 3s infinite ease-in-out;
+}
+@keyframes kineticMuscle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15) rotate(-3deg); filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.5)); }
+}
+
+/* 4. تأثير الـ DNA العائم المتداخل ثلاثي الأبعاد */
+.DNA-grow {
+    animation: kineticDNA 3s infinite ease-in-out;
+}
+@keyframes kineticDNA {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.12) rotate(180deg); filter: drop-shadow(0 0 10px rgba(0, 255, 200, 0.4)); }
+}
+
+/* 5. تأثير نبض الحماية الترددي للدرع (Sonar Radar Pulse) */
+.shield-protect {
+    animation: kineticShield 2.5s infinite ease-in-out;
+}
+@keyframes kineticShield {
+    0%, 100% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.1) brightness(1.3); filter: drop-shadow(0 0 10px var(--gold-light)); }
+}
+
+/* حركة التوهج الشامل للمصباح */
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* ======================================================== */
+/* مؤثرات بصرية خرافية لقسم المكونات والـ Highlights الفاخر */
+/* ======================================================== */
+
+.ingredients-section {
+    padding: 90px 8%;
+    background-color: var(--bg-dark) !important;
+    position: relative;
+}
+
+/* كبسولة العنوان العلوي */
+.ingredients-section-badge {
+    display: table;
+    margin: 0 auto 15px;
+    background: rgba(255, 140, 0, 0.08);
+    color: var(--amber-light);
+    border: 1px solid rgba(255, 140, 0, 0.25);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+/* حاوية القائمة الشفافة الفخمة */
+.ingredients-list {
+    max-width: 900px;
+    margin: 40px auto 0;
+    background: rgba(22, 22, 25, 0.5); /* زجاج مظلم ناعم */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--line-border);
+    border-radius: 24px;
+    padding: 15px 30px;
+    box-shadow: var(--shadow-premium);
+}
+
+/* صف المكون المتطور كمستطيل تفاعلي ليزري */
+.ingredient-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+}
+
+.ingredient-row:last-child {
+    border-bottom: none;
+}
+
+/* حركات تفاعلية دقيقة مذهلة عند تمرير الفأرة فوق المكون */
+.ingredient-row:hover {
+    background: rgba(255, 255, 255, 0.02);
+    padding-right: 25px; /* تأثير زحف أيمن مرن وأنيق */
+}
+
+/* الطرف الأيمن للمكون (الرقم والاسم العلمي) */
+.ing-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* ترقيم مخبري ليزري متوهج خفيف */
+.ing-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.ingredient-row:hover .ing-number {
+    color: var(--gold-light);
+    border-color: rgba(237, 192, 45, 0.3);
+    background: rgba(237, 192, 45, 0.05);
+}
+
+/* ضبط مظهر الخط والاسم للمكون */
+.ingredient-name {
+    font-size: 19px !important;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.ingredient-name .lat {
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: 0.3px;
+}
+
+/* الطرف الأيسر للمكون (المظلات المتوهجة الفخمة) */
+.ing-effect-highlight {
+    display: flex;
+    align-items: center;
+}
+
+/* هندسة كبسولة التظليل الأساسية الـ Highlighted */
+.highlight-text {
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 14.5px;
+    letter-spacing: -0.1px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* ---------------------------------------------------- */
+/* كبسولات التظليل المضيئة حسب لون وأثر المكون (Glow Highlights) */
+/* ---------------------------------------------------- */
+
+/* 1. التظليل الأحمر البركاني (للتستوستيرون والفيغر) */
+.red-glow {
+    background: rgba(225, 26, 54, 0.08);
+    color: #ff4d64;
+    border: 1px solid rgba(225, 26, 54, 0.25);
+    box-shadow: inset 0 0 10px rgba(225, 26, 54, 0.1);
+}
+.ingredient-row:hover .red-glow {
+    background: var(--primary-red);
+    color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(225, 26, 54, 0.5);
+    border-color: transparent;
+}
+
+/* 2. التظليل الأمبر المتوهج (للطاقة والتركيز) */
+.amber-glow {
+    background: rgba(255, 140, 0, 0.08);
+    color: var(--amber-light);
+    border: 1px solid rgba(255, 140, 0, 0.25);
+    box-shadow: inset 0 0 10px rgba(255, 140, 0, 0.1);
+}
+.ingredient-row:hover .amber-glow {
+    background: linear-gradient(135deg, var(--amber-light), var(--amber-dark));
+    color: #111111 !important;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
+    border-color: transparent;
+    font-weight: 800;
+}
+
+/* 3. التظليل الذهبي الملكي (لليبيدو والبروستات الهرموني) */
+.gold-glow {
+    background: rgba(214, 177, 94, 0.08);
+    color: var(--gold-light);
+    border: 1px solid rgba(214, 177, 94, 0.25);
+    box-shadow: inset 0 0 10px rgba(214, 177, 94, 0.1);
+}
+.ingredient-row:hover .gold-glow {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-base));
+    color: #111111 !important;
+    box-shadow: 0 0 20px rgba(237, 192, 45, 0.5);
+    border-color: transparent;
+    font-weight: 800;
+}
+
+/* 4. التظليل الفضي المشرق (للخصوبة والدورة الدموية) */
+.white-glow {
+    background: rgba(255, 255, 255, 0.04);
+    color: #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.ingredient-row:hover .white-glow {
+    background: #ffffff;
+    color: #111111 !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    border-color: transparent;
+    font-weight: 800;
+}
+
+/* ---------------------------------------------------- */
+/* ملاءمة شاشات الموبايل (Responsive Design) */
+/* ---------------------------------------------------- */
+@media (max-width: 600px) {
+    .ingredients-list {
+        padding: 5px 15px;
+        border-radius: 18px;
+    }
+    .ingredient-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 20px 5px;
+    }
+    .ingredient-row:hover {
+        padding-right: 5px; /* إلغاء الزحف على الموبايل لثبات الأبعاد */
+    }
+    .ing-effect-highlight {
+        width: 100%;
+    }
+    .highlight-text {
+        width: 100%;
+        text-align: center;
+        font-size: 13.5px;
+        padding: 6px 12px;
+    }
+}
+/* ======================================================== */
+/* مؤثرات خرافية متطورة لقسم مسار الخبير وبطاقة الطبيب     */
+/* ======================================================== */
+
+.expert-section {
+    padding: 90px 8%;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #111113 100%) !important;
+    position: relative;
+}
+
+/* شريط التمهيد الفاخر */
+.expert-section-badge {
+    display: table;
+    margin: 0 auto 20px;
+    background: rgba(214, 177, 94, 0.08);
+    color: var(--gold-light);
+    border: 1px solid rgba(214, 177, 94, 0.3);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    box-shadow: inset 0 0 8px rgba(237, 192, 45, 0.1);
+}
+
+.expert-disclaimer {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 50px;
+    font-size: 16px !important;
+    color: var(--text-muted) !important;
+    line-height: 1.75;
+}
+
+/* هندسة خريطة المسار العمودي */
+.process-map {
+    position: relative;
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* خط النيون الليزري الرابط الخلفي بين الخطوات */
+.process-map::before {
+    content: "";
+    position: absolute;
+    right: 25px; /* يرتكز في منتصف الدوائر تماماً */
+    top: 30px;
+    bottom: 30px;
+    width: 2px;
+    background: linear-gradient(180deg, 
+                var(--gold-light) 0%, 
+                var(--amber-light) 60%, 
+                rgba(255, 255, 255, 0.02) 100%);
+    z-index: 1;
+}
+
+/* صف الخطوة الفردي المتجاوب */
+.process-step {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* الدائرة الرقمية المشعة */
+.step-number-wrapper {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #161619;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+.step-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+/* محتوى نص الخطوة */
+.step-content {
+    background: rgba(22, 22, 25, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    padding: 22px 25px;
+    border-radius: 18px;
+    flex-grow: 1;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    text-align: right;
+}
+
+.step-content h3 {
+    font-size: 19px !important;
+    color: var(--text-white);
+    margin-bottom: 8px;
+    font-weight: 800;
+    transition: color 0.3s ease;
+}
+
+.step-content p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ---------------------------------------------------- */
+/* المؤثرات الحركية والتوهج عند تمرير الفأرة (Hover) */
+/* ---------------------------------------------------- */
+.process-step:hover .step-number-wrapper {
+    border-color: var(--gold-light);
+    background: var(--gold-base);
+    box-shadow: 0 0 15px rgba(237, 192, 45, 0.4);
+}
+
+.process-step:hover .step-number {
+    color: #111113;
+}
+
+.process-step:hover .step-content {
+    background: rgba(22, 22, 25, 0.8);
+    border-color: rgba(237, 192, 45, 0.2);
+    transform: translateX(-5px); /* زحف ليزري أنيق لجهة اليسار */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.process-step:hover .step-content h3 {
+    color: var(--gold-light);
+}
+
+/* ---------------------------------------------------- */
+/* بطاقة إشراف الدكتور الفخمة (Premium Doctor Shield)  */
+/* ---------------------------------------------------- */
+.doctor-approval-card {
+    max-width: 550px;
+    margin: 60px auto 0;
+    background: linear-gradient(135deg, rgba(22, 22, 25, 0.7), #131316);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(214, 177, 94, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* تأثير الخط العاكس النيوني الجانبي للبطاقة */
+.doctor-approval-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--gold-light), var(--amber-light));
+}
+
+/* دائرة الإيموجي المتوهجة */
+.doc-avatar-wrapper {
+    width: 65px;
+    height: 65px;
+    background: #111113;
+    border: 1px solid rgba(237, 192, 45, 0.3);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.doc-avatar-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 20px;
+    background: var(--gold-light);
+    z-index: -1;
+    opacity: 0.2;
+    filter: blur(6px);
+}
+
+.doc-emoji {
+    font-size: 32px;
+    animation: docPulse 2s infinite ease-in-out;
+}
+
+/* نصوص بطاقة الطبيب */
+.doc-info {
+    text-align: right;
+}
+
+.doc-info h4 {
+    font-size: 19px !important;
+    color: var(--gold-light);
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.doc-info h4 .lat {
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: 0.5px;
+}
+
+.doc-info p {
+    font-size: 14px;
+    color: #e2e8f0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* أنيميشن نبض خفيف لإيموجي الطبيب */
+@keyframes docPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+/* ---------------------------------------------------- */
+/* ملاءمة شاشات الموبايل (Responsive Design) */
+/* ---------------------------------------------------- */
+@media (max-width: 600px) {
+    .process-map::before {
+        right: 20px; /* إعادة تموضع الخط الرابط على الموبايل */
+    }
+    .step-number-wrapper {
+        width: 42px;
+        height: 42px;
+    }
+    .step-number {
+        font-size: 15px;
+    }
+    .step-content {
+        padding: 18px;
+    }
+    .step-content h3 {
+        font-size: 17px !important;
+    }
+    .step-content p {
+        font-size: 13.5px;
+    }
+    .process-step:hover .step-content {
+        transform: translateX(0); /* إلغاء الزحف الأفقي على الموبايل لاستقرار الواجهة */
+    }
+    .doctor-approval-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 25px 20px;
+    }
+    .doc-info {
+        text-align: center;
+    }
+}
+
+/* ======================================================== */
+/* مؤثرات خرافية لقسم آراء الزبائن والـ Avatars الفاخرة     */
+/* ======================================================== */
+
+.testimonials-section {
+    padding: 80px 8%;
+    background-color: var(--bg-dark);
+    position: relative;
+}
+
+/* كبسولة العنوان العلوي لقسم الآراء */
+.reviews-section-badge {
+    display: table;
+    margin: 0 auto 15px;
+    background: rgba(214, 177, 94, 0.08);
+    color: var(--gold-light);
+    border: 1px solid rgba(214, 177, 94, 0.25);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* تهيئة وتحديث حاوية الكاروسيل/الشبكة لتصبح مرنة ومتناسقة */
+.carousel-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* كارت الرأي الفاخر (Glassmorphism Premium Card) */
+.tcard {
+    background: linear-gradient(145deg, var(--bg-slate), #131316);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 35px 30px;
+    border-radius: 22px;
+    box-shadow: var(--shadow-premium);
+    flex: 1;
+    min-width: 300px;
+    max-width: 340px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    text-align: right;
+}
+
+/* تأثير التوهج والارتفاع الخرافي عند الـ Hover */
+.tcard:hover {
+    transform: translateY(-6px);
+    border-color: rgba(237, 192, 45, 0.25);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 25px -5px rgba(237, 192, 45, 0.08);
+}
+
+/* ضبط بريق النجوم الذهبية */
+.stars-wrapper {
+    color: var(--gold-base) !important;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    filter: drop-shadow(0 0 4px rgba(237, 192, 45, 0.4));
+}
+
+/* نص شهادة الزبون */
+.review-text {
+    color: var(--text-white) !important;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-style: italic;
+    flex-grow: 1;
+}
+
+/* الحاوية السفلية لبيانات الزبون والأفاتار الجديد */
+.user-profile-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 18px;
+}
+
+/* الأفاتار الهولوغرافي الفخم المشع (Premium Avatar Badge) */
+.user-avatar-premium {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* تدرجات نيونية مخصصة للأفاتار لإبراز طابع السرية الفخمة */
+.red-glow-avatar {
+    background: linear-gradient(135deg, #e11a36, #800e1e);
+    border: 1px solid rgba(225, 26, 54, 0.4);
+}
+.red-glow-avatar::after {
+    content: ''; position: absolute; inset: -2px; border-radius: 50%;
+    background: #e11a36; z-index: -1; opacity: 0.2; filter: blur(5px);
+}
+
+.amber-glow-avatar {
+    background: linear-gradient(135deg, #ff6a2c, #a03c12);
+    border: 1px solid rgba(255, 106, 44, 0.4);
+}
+.amber-glow-avatar::after {
+    content: ''; position: absolute; inset: -2px; border-radius: 50%;
+    background: #ff6a2c; z-index: -1; opacity: 0.2; filter: blur(5px);
+}
+
+.gold-glow-avatar {
+    background: linear-gradient(135deg, var(--gold-light), #8e7335);
+    border: 1px solid rgba(214, 177, 94, 0.4);
+}
+.gold-glow-avatar::after {
+    content: ''; position: absolute; inset: -2px; border-radius: 50%;
+    background: var(--gold-light); z-index: -1; opacity: 0.2; filter: blur(5px);
+}
+
+/* تأثير التفاعل عند الـ Hover لزيادة لمعان الأفاتار */
+.tcard:hover .user-avatar-premium::after {
+    opacity: 0.6;
+    filter: blur(8px);
+}
+
+.tcard:hover .user-avatar-premium {
+    transform: scale(1.05);
+}
+
+/* نصوص معلومات الزبون */
+.user-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.user-name {
+    color: #f8fafc !important;
+    font-size: 14.5px;
+    font-weight: 700;
+}
+
+.user-city {
+    color: var(--text-muted);
+    font-size: 12.5px;
+    font-weight: 500;
+}
+
+/* علامة التوثيق المخفية والجميلة أسفل الكارت */
+.verified-badge-icon {
+    position: absolute;
+    bottom: -15px;
+    left: -15px;
+    font-size: 70px;
+    font-weight: 900;
+    color: rgba(237, 192, 45, 0.02);
+    user-select: none;
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+
+.tcard:hover .verified-badge-icon {
+    color: rgba(237, 192, 45, 0.05);
+    transform: scale(1.1) rotate(-10deg);
+}
+
+/* ======================================================== */
+/* 1. مؤثرات قسم الضمانات (Guarantees Premium Style)        */
+/* ======================================================== */
+
+.guarantees-section {
+    padding: 80px 8%;
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.guarantees-section-badge, .usage-section-badge {
+    display: table;
+    margin: 0 auto 15px;
+    background: rgba(214, 177, 94, 0.08);
+    color: var(--gold-light);
+    border: 1px solid rgba(214, 177, 94, 0.25);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.guarantees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.guarantee-card {
+    background: linear-gradient(145deg, var(--bg-slate), #121215);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 30px 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: var(--shadow-premium);
+}
+
+.guarantee-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(237, 192, 45, 0.3);
+    box-shadow: 0 15px 35px -10px rgba(255, 140, 0, 0.15);
+}
+
+.guarantee-card .g-icon-wrapper {
+    width: 55px;
+    height: 55px;
+    background: #0f0f12;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+}
+
+.guarantee-card h3 {
+    font-size: 18px !important;
+    color: var(--text-white);
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.guarantee-card p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ======================================================== */
+/* 2. مؤثرات قسم طريقة الاستعمال (Usage Cinematic Style)    */
+/* ======================================================== */
+
+.usage-section {
+    padding: 80px 8%;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #0d0d0f 100%) !important;
+}
+
+.usage-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 45px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.usage-card {
+    flex: 1;
+    background: #141417;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 24px;
+    padding: 35px 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    text-align: right;
+}
+
+.time-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.time-icon {
+    font-size: 32px;
+    transition: transform 0.4s ease;
+}
+
+.usage-card h3 {
+    font-size: 24px !important;
+    font-weight: 900;
+    margin: 0;
+}
+
+.time-body p {
+    font-size: 16px;
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.lat-num {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700;
+    color: var(--text-white);
+    font-size: 18px;
+}
+
+/* خطوط ليزرية سفلية تنبض وتتمدد عند الـ Hover */
+.usage-glow-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    transition: all 0.4s ease;
+    opacity: 0.2;
+}
+
+/* تخصيص كارت الصباح (توهج الطاقة الشمسية الذهبي) */
+.morning-card h3 { color: var(--gold-light); }
+.morning-card .usage-glow-line { background: linear-gradient(90deg, transparent, var(--gold-light), transparent); }
+
+.morning-card:hover {
+    border-color: rgba(237, 192, 45, 0.3);
+    box-shadow: 0 25px 50px -15px rgba(237, 192, 45, 0.2);
+    transform: translateY(-5px);
+}
+.morning-card:hover .time-icon { transform: rotate(20deg) scale(1.15); filter: drop-shadow(0 0 8px var(--gold-light)); }
+.morning-card:hover .usage-glow-line { opacity: 1; height: 4px; }
+
+/* تخصيص كارت الليل (توهج النيون الهادئ العميق) */
+.night-card h3 { color: #818cf8; } /* لون أزرق نيلي ليلي ساحر */
+.night-card .usage-glow-line { background: linear-gradient(90deg, transparent, #818cf8, transparent); }
+
+.night-card:hover {
+    border-color: rgba(129, 140, 248, 0.3);
+    box-shadow: 0 25px 50px -15px rgba(129, 140, 248, 0.2);
+    transform: translateY(-5px);
+}
+.night-card:hover .time-icon { transform: translateX(-3px) scale(1.1); filter: drop-shadow(0 0 8px #818cf8); }
+.night-card:hover .usage-glow-line { opacity: 1; height: 4px; }
+
+
+/* ======================================================== */
+/* حركات الأيقونات للضمانات (Kinetic Guarantees Animations) */
+/* ======================================================== */
+
+/* 1. نبض العملة الذهبية */
+.pulse-gold { animation: kGold 2s infinite ease-in-out; }
+@keyframes kGold { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); filter: drop-shadow(0 0 5px var(--gold-light)); } }
+
+/* 2. سرية وغموض */
+.aura-secret { animation: kSecret 3s infinite alternate ease-in-out; }
+@keyframes kSecret { 0% { opacity: 0.7; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1.05); } }
+
+/* 3. حركة الشاحنة */
+.guarantee-card:hover .truck-move { animation: kTruck 0.6s ease-in-out infinite alternate; }
+@keyframes kTruck { 0% { transform: translateX(0); } 100% { transform: translateX(-4px); } }
+
+/* 4. وميض الهاتف المضيء */
+.phone-glow { animation: kPhone 2.5s infinite ease-in-out; }
+@keyframes kPhone { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(10deg) scale(1.08); } }
+
+
+/* ======================================================== */
+/* ملاءمة الشاشات والموبايل (Responsive Grid)               */
+/* ======================================================== */
+@media (max-width: 650px) {
+    .usage-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .usage-card {
+        padding: 25px;
+    }
+    .guarantees-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    .guarantee-card {
+        padding: 25px 15px;
+    }
+}
+
+/* ======================================================== */
+/* قسم شهادات الفيديو العمودية (6:19) - تمرير أفقي فاخر */
+/* ======================================================== */
+.vtestimonials-section {
+    padding: 90px 8%;
+    border-top: 1px solid var(--line-border);
+    border-bottom: 1px solid var(--line-border);
+    background:
+        radial-gradient(circle at 15% 0%, rgba(225, 26, 54, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 85% 100%, rgba(255, 140, 0, 0.06) 0%, transparent 45%),
+        var(--bg-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.vtestimonials-track {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    padding: 14px 4px 30px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-top: 45px;
+}
+.vtestimonials-track::-webkit-scrollbar { display: none; }
+
+/* البطاقة العمودية بنسبة 6:19 */
+.vtcard {
+    position: relative;
+    flex: 0 0 auto;
+    width: clamp(240px, 78vw, 300px);
+    aspect-ratio: 6 / 19;
+    border-radius: 26px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    background: var(--bg-slate);
+    border: 1px solid var(--line-border);
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+}
+
+.vtcard:hover {
+    transform: translateY(-8px) scale(1.015);
+    border-color: rgba(237, 192, 45, 0.45);
+    box-shadow: 0 30px 60px -18px rgba(255, 140, 0, 0.28), 0 0 34px -8px rgba(237, 192, 45, 0.18);
+}
+
+/* الإطار الذهبي المتوهج حول البطاقة */
+.vtcard::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 26px;
+    padding: 1.5px;
+    background: linear-gradient(160deg, rgba(237, 192, 45, 0.55), transparent 40%, transparent 65%, rgba(255, 140, 0, 0.4));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.vtcard video,
+.vtcard img.vt-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* تدرج معتم أسفل البطاقة لإبراز الاسم */
+.vt-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 50px 18px 18px;
+    background: linear-gradient(to top, rgba(8,8,9,0.92) 0%, rgba(8,8,9,0.55) 55%, transparent 100%);
+    z-index: 3;
+    pointer-events: none;
+}
+.vt-name {
+    color: var(--text-white);
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.vt-name .vt-check {
+    color: #2ec4b6;
+    font-size: 14px;
+}
+.vt-role {
+    color: var(--gold-base);
+    font-size: 12.5px;
+    font-weight: 600;
+}
+.vt-stars {
+    color: var(--gold-light);
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* زر التشغيل المركزي */
+.vt-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, var(--primary-red), var(--amber-dark));
+    color: #fff;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.08), 0 8px 24px rgba(225,26,54,0.45);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    animation: vtPlayPulse 1.6s infinite alternate ease-in-out;
+}
+.vt-play:hover { transform: translate(-50%, -50%) scale(1.08); }
+.vtcard.is-playing .vt-play,
+.vtcard.is-playing .vt-overlay { opacity: 0; pointer-events: none; }
+
+@keyframes vtPlayPulse {
+    0%   { box-shadow: 0 0 0 6px rgba(255,255,255,0.08), 0 8px 24px rgba(225,26,54,0.4); }
+    100% { box-shadow: 0 0 0 10px rgba(255,255,255,0.03), 0 10px 30px rgba(255,140,0,0.55); }
+}
+
+/* بطاقة الصورة - شارة "نتيجة حقيقية" */
+.vt-photo-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 4;
+    background: linear-gradient(135deg, var(--gold-light), var(--amber-light));
+    color: #111;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 800;
+    font-size: 11.5px;
+    padding: 5px 12px;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(237,192,45,0.35);
+}
+
+/* تلميح السحب الأفقي */
+.vt-swipe-hint {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.vt-swipe-hint i { color: var(--gold-base); animation: vtSwipe 1.4s infinite ease-in-out; }
+@keyframes vtSwipe {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-6px); }
+}
+
+/* ملاءمة الموبايل */
+@media (max-width: 600px) {
+    .carousel-container {
+        gap: 20px;
+    }
+    .tcard {
+        max-width: 100%;
+        padding: 25px;
+    }
+    .vtestimonials-section { padding: 60px 5%; }
+    .vtcard { width: clamp(230px, 82vw, 270px); }
+}
+
+/* Responsive & Mobile Optimizations */
+@media (max-width: 768px) {
+    h1 { font-size: 36px !important; }
+    h2 { font-size: 28px !important; }
+    .hero {
+        flex-direction: column;
+        padding: 40px 5% 60px;
+        text-align: center;
+    }
+    .hero-text { max-width: 100%; }
+    .hero-text p { text-align: center; }
+    .checkout-container { flex-direction: column; }
+    .checkout-info, .checkout-form-side { padding: 30px 20px; }
+    .tcard { min-width: 85%; }
+}
+
+        /* التجاوب مع جميع الشاشات */
+        @media (max-width: 968px) {
+            header { padding: 15px 5%; }
+            .hero { flex-direction: column; text-align: center; padding-top: 40px; }
+            .hero-text { max-width: 100%; }
+            .hero-cta-group { margin: 0 auto; width: 100%; }
+            .hero-visual { margin-top: 30px; }
+            .lead-container { flex-direction: column; text-align: center; padding: 30px 20px; }
+            .lead-info { max-width: 100%; }
+            .lead-form { flex-direction: column; width: 100%; }
+            .checkout-container { flex-direction: column; }
+            .checkout-info, .checkout-form-side { padding: 30px 20px; }
+        }
+
+        /* ======================================================== */
+/* مؤثرات بصرية خرافية لنموذج الطلب والدفع الفاخر          */
+/* ======================================================== */
+
+.order-section {
+    padding: 90px 4%;
+    background: linear-gradient(180deg, #0d0d0f 0%, #161619 100%) !important;
+    display: flex;
+    justify-content: center;
+}
+
+/* حاوية العلبة الأساسية للطلب (Premium Glass Order Card) */
+.order-card-premium {
+    background: linear-gradient(145deg, #161619, #0f0f12);
+    border: 1px solid rgba(214, 177, 94, 0.18); /* إطار ذهبي مخملي خفيف */
+    border-radius: 28px;
+    padding: 50px 40px 40px;
+    max-width: 580px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(237, 192, 45, 0.03);
+}
+
+/* شارة الخصم النابضة في أعلى الكارت */
+.discount-badge-flash {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary-red, #e11a36), #b01025);
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 800;
+    padding: 7px 22px;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(225, 26, 54, 0.4);
+    animation: badgePulse 2s infinite ease-in-out;
+    white-space: nowrap;
+}
+
+.order-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.order-header h2 {
+    font-size: 28px !important;
+    font-weight: 900;
+    color: var(--text-white);
+    margin-bottom: 12px;
+}
+
+.order-header .sb {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* هندسة حقول الإدخال المتطورة */
+.order-form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.field-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: right;
+}
+
+.field-wrapper label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #cbd5e1;
+    padding-right: 4px;
+}
+
+/* دمج الأيقونات داخل الحقل */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    right: 16px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
+
+/* نمط المدخلات النصية ومربعات النص */
+.input-with-icon input, 
+.input-with-icon textarea {
+    width: 100%;
+    background: #0b0b0d !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 15px 48px 15px 16px; /* مسافة أمان يمنى للأيقونة */
+    color: #ffffff;
+    font-family: 'Cairo', sans-serif;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.input-with-icon textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* محاذاة أيقونة العنوان في الأعلى للحقول الكبيرة */
+.align-top .input-icon {
+    top: 15px;
+}
+
+/* تباين متوهج رائع عند نقر الحقل للتركيز */
+.input-with-icon input:focus, 
+.input-with-icon textarea:focus {
+    border-color: var(--gold-light, #edc02d);
+    outline: none;
+    background: #0f0f12 !important;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 0 12px rgba(237, 192, 45, 0.12);
+}
+
+.input-with-icon input:focus + .input-icon,
+.input-with-icon textarea:focus + .input-icon {
+    color: var(--gold-light);
+}
+
+/* صندوق مراجعة وفحص السعر (Premium Invoice Box) */
+.recap-box-premium {
+    margin-top: 35px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recap-product-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recap-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--gold-light);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--gold-light);
+}
+
+.recap-box-premium .l {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.recap-price-tag {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.recap-price-tag .old-price {
+    font-size: 13px;
+    text-decoration: line-through;
+    color: #64748b;
+}
+
+.recap-price-tag .new-price {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--amber-light, #ff6a2c);
+    text-shadow: 0 0 10px rgba(255, 106, 44, 0.2);
+}
+
+.recap-price-tag .new-price small {
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 2px;
+}
+
+/* زر إرسال وتأكيد الطلب الخرافي والمشع (Cinematic CTA Button) */
+.cta-submit-button {
+    width: 100%;
+    margin-top: 25px;
+    background: linear-gradient(135deg, #25d366, #128c7e); /* كود لون واتس اب الرسمي الفاخر */
+    border: none;
+    border-radius: 16px;
+    padding: 18px 20px;
+    color: #ffffff;
+    font-family: 'Cairo', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* تأثير لمعة الليزر المتحركة عبر الزر تلقائياً لتشجيع النقر */
+.btn-flash-effect {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-30deg);
+    animation: btnFlash 3s infinite ease-in-out;
+}
+
+.cta-submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(37, 211, 102, 0.45);
+    filter: brightness(1.1);
+}
+
+.cta-submit-button:active {
+    transform: translateY(-1px);
+}
+
+/* نصوص التوثيق والأمان السفلية */
+.trust-footer-meta {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.trust-footer-meta .divider {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+/* أنيميشن وميض النبض للشارة العلوية */
+@keyframes badgePulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.04); box-shadow: 0 12px 25px rgba(225, 26, 54, 0.6); }
+}
+
+/* أنيميشن حركة لمعة الليزر للزر */
+@keyframes btnFlash {
+    0% { right: -100%; }
+    40%, 100% { right: 150%; }
+}
+
+/* ======================================================== */
+/* ملاءمة الشاشات الصغيرة والموبايل                         */
+/* ======================================================== */
+@media (max-width: 600px) {
+    .order-card-premium {
+        padding: 45px 20px 25px;
+        border-radius: 22px;
+    }
+    .order-header h2 {
+        font-size: 24px !important;
+    }
+    .recap-box-premium {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 15px;
+    }
+    .recap-price-tag {
+        align-items: flex-start;
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 10px;
+    }
+    .cta-submit-button {
+        font-size: 16px;
+        padding: 15px;
+    }
+    .trust-footer-meta {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 22px;
+    }
+    .trust-footer-meta .divider {
+        display: none;
+    }
+}
+/* ======================================================== */
+/* مؤثرات بصرية خرافية لقسم الأسئلة الشائعة (Premium FAQ)   */
+/* ======================================================== */
+
+.faq-section {
+    padding: 90px 4%;
+    background-color: var(--bg-dark) !important;
+}
+
+.faq-shead {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+/* شارة رأس القسم الفاخرة */
+.faq-shead .eyebrow-badge {
+    display: table;
+    margin: 0 auto 15px;
+    background: rgba(255, 106, 44, 0.08); /* أمبر ناعم */
+    color: var(--amber-light, #ff6a2c);
+    border: 1px solid rgba(255, 106, 44, 0.25);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.faq-shead h2 {
+    font-size: 32px !important;
+    font-weight: 900;
+    color: var(--text-white);
+}
+
+/* حاوية القائمة */
+.faq-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* مسافة أمان ذكية بين الكروت */
+}
+
+/* هندسة كارت السؤال الفردي الـ Details */
+.faq-item {
+    background: linear-gradient(145deg, #151518, #0e0e11);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* إخفاء المثلث الافتراضي البشع للمتصفحات */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+.faq-item summary {
+    list-style: none;
+}
+
+/* شريط تحفيز النقر الفخم (The Trigger Header) */
+.faq-trigger {
+    padding: 22px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.faq-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #f1f5f9;
+    transition: color 0.3s ease;
+    text-align: right;
+}
+
+/* هندسة وتصميم سهم المؤشر الليزري المتطور */
+.faq-icon-arrow {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    flex-shrink: 0;
+}
+
+/* رسم رأس السهم باستخدام الـ CSS النقي */
+.faq-icon-arrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-bottom: 2px solid #94a3b8;
+    border-left: 2px solid #94a3b8;
+    transform: rotate(-45deg); /* سهم يتجه لأسفل */
+    margin-bottom: 2px;
+    transition: all 0.35s ease;
+}
+
+/* ---------------------------------------------------- */
+/* مؤثرات التفاعل عند فتح السؤال (Active / Open State)   */
+/* ---------------------------------------------------- */
+
+/* 1. توهج ليزري لكامل الكارت عند فتحه */
+.faq-item[open] {
+    border-color: rgba(237, 192, 45, 0.25); /* إطار ذهبي مشع خفيف */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(237, 192, 45, 0.04);
+    background: #151518;
+}
+
+/* 2. تحول لون عنوان السؤال النشط */
+.faq-item[open] .faq-title {
+    color: var(--gold-light, #edc02d);
+}
+
+/* 3. دوران ودفع سهم المؤشر للأعلى واشتعال إضاءته */
+.faq-item[open] .faq-icon-arrow {
+    background: var(--gold-base, #d6b15e);
+    border-color: transparent;
+    box-shadow: 0 0 12px rgba(237, 192, 45, 0.4);
+}
+
+.faq-item[open] .faq-icon-arrow::before {
+    border-color: #111113; /* يقلب للون الأسود لتباين خارق */
+    transform: rotate(135deg); /* يلتف للأعلى بسلاسة سينمائية */
+    margin-bottom: -3px;
+}
+
+/* ---------------------------------------------------- */
+/* مساحة وبنية نص الإجابة (The Content Body)             */
+/* ---------------------------------------------------- */
+.faq-content {
+    padding: 0 25px 25px;
+    text-align: right;
+    animation: faqFadeIn 0.4s ease-out; /* أنيميشن انسيابي ناعم عند الفتح */
+}
+
+.faq-content p {
+    font-size: 15px;
+    color: #cbd5e1;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* عبارات وعلامات التمييز والتأكيد داخل الأجوبة */
+.highlight-brand {
+    color: var(--amber-light, #ff6a2c);
+    font-weight: 700;
+}
+
+.lat-quote {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600;
+    color: var(--gold-light, #edc02d);
+    background: rgba(237, 192, 45, 0.06);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+/* أنيميشن التلاشي والظهور المريح للعين */
+@keyframes faqFadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* تأثير تحفيزي خفيف عند حرك الفأرة على السؤال قبل النقر */
+.faq-item:not([open]):hover {
+    border-color: rgba(255, 255, 255, 0.08);
+    background: linear-gradient(145deg, #18181c, #111114);
+}
+
+.faq-item:not([open]):hover .faq-icon-arrow {
+    border-color: rgba(237, 192, 45, 0.3);
+    color: var(--gold-light);
+}
+
+/* ======================================================== */
+/* ملاءمة شاشات الموبايل المتكاملة                           */
+/* ======================================================== */
+@media (max-width: 600px) {
+    .faq-trigger {
+        padding: 18px 20px;
+    }
+    .faq-title {
+        font-size: 15.5px;
+        line-height: 1.4;
+        padding-left: 10px; /* مسافة أمان لمنع الالتصاق بالسهم */
+    }
+    .faq-content {
+        padding: 0 20px 20px;
+    }
+    .faq-content p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+}
+/* ======================================================== */
+/* مؤثرات بصرية خرافية للفوتر والشريط السفلي المثبت (Sticky) */
+/* ======================================================== */
+
+.premium-footer {
+    background: #09090b !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 60px 4% 120px; /* مسافة أمان سفلية ضخمة لمنع التداخل مع شريط الـ Sticky */
+    text-align: center;
+    position: relative;
+}
+
+/* شعار الماركة الفخم */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 35px;
+}
+
+.brand-crown-wrapper {
+    width: 40px;
+    height: 40px;
+    background: rgba(214, 177, 94, 0.05);
+    border: 1px solid rgba(214, 177, 94, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.footer-brand .crown {
+    font-size: 20px;
+    color: var(--gold-light, #edc02d);
+    filter: drop-shadow(0 0 5px rgba(237, 192, 45, 0.4));
+}
+
+.brand-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-name {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.brand-x {
+    color: var(--red, #e11a36);
+    font-style: normal;
+    text-shadow: 0 0 10px rgba(225, 26, 54, 0.3);
+}
+
+.brand-sub {
+    display: block;
+    font-size: 9px;
+    color: var(--gold-base, #d6b15e);
+    letter-spacing: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: 2px;
+    text-transform: uppercase;
+}
+
+/* علبة النص القانوني العازلة */
+.legal-disclaimer-box {
+    max-width: 800px;
+    margin: 0 auto 35px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    padding: 20px 25px;
+    border-radius: 14px;
+}
+
+.premium-footer .leg {
+    font-size: 12.5px;
+    color: #52525b !important; /* لون رمادي خافت جداً غير مشتت للعين */
+    line-height: 1.8;
+    margin: 0;
+    text-align: justify;
+    text-align-last: center;
+}
+
+/* خط الحقوق السفلي */
+.footer-bottom-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    padding-top: 25px;
+}
+
+.premium-footer .cp {
+    font-size: 13px;
+    color: #3f3f46 !important;
+    margin: 0;
+}
+
+.lat-footer {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ======================================================== */
+/* هندسة وتأثيرات الشريط السفلي المثبت (Premium Sticky CTA) */
+/* ======================================================== */
+
+.sticky-cta-holder {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 15, 18, 0.85);
+    backdrop-filter: blur(15px) saturate(180%); /* تأثير الزجاج الضبابي الفخم */
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 14px 6%;
+    z-index: 9999; /* البقاء فوق جميع عناصر وأقسام الصفحة دائماً */
+    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.6);
+    padding-bottom: calc(14px + env(safe-area-inset-bottom)); /* التوافق الذكي مع نوتش الموبايلات الحديثة */
+}
+
+.sticky-in {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* استعراض السعر الرقمي داخل الشريط */
+.sticky-price-display {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lat-price {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--amber-light, #ff6a2c);
+    text-shadow: 0 0 10px rgba(255, 106, 44, 0.2);
+}
+
+.lat-price small {
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 2px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.lat-price-old {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #71717a;
+}
+
+/* زر التحويل السريع المشع والمتحرك (Sticky CTA Button) */
+.sticky-action-btn {
+    background: linear-gradient(135deg, var(--red, #e11a36), #b01025);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 15.5px;
+    font-weight: 800;
+    padding: 14px 35px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(225, 26, 54, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    white-space: nowrap;
+}
+
+/* حلقة التوهج النبضية خلف الزر لجذب الإبهام على الموبايل */
+.sticky-btn-pulse {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.15);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.sticky-action-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(225, 26, 54, 0.45);
+    filter: brightness(1.1);
+}
+
+.sticky-action-btn:hover .sticky-btn-pulse {
+    opacity: 1;
+}
+
+/* ======================================================== */
+/* ملاءمة تامة وشاملة لشاشات الموبايل المتنقلة               */
+/* ======================================================== */
+@media (max-width: 600px) {
+    .premium-footer {
+        padding: 50px 6px 130px;
+    }
+    .legal-disclaimer-box {
+        padding: 15px;
+    }
+    .premium-footer .leg {
+        font-size: 11.5px;
+        line-height: 1.7;
+    }
+    
+    /* جعل عناصر الـ Sticky عمودية ومتناسقة ومريحة جداً للضغط باليد */
+    .sticky-in {
+        flex-direction: row; /* الحفاظ على الهيكل الأفقي لمنع استهلاك مساحة الشاشة طولياً */
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .sticky-price-display {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0px;
+    }
+    .lat-price {
+        font-size: 19px;
+    }
+    .lat-price-old {
+        font-size: 12px;
+        margin-top: -2px;
+    }
+    .sticky-action-btn {
+        font-size: 14px;
+        padding: 12px 20px;
+        border-radius: 10px;
+        flex-grow: 1; /* جعل الزر يأخذ المساحة المتبقية كاملة للضغط المريح */
+        text-align: center;
+    }
+}
+
+/* ======================================================== */
+/* كود الهيدر المصلح هندسياً والمثبت بدقة لحل مشكلة الـ Scroll */
+/* ======================================================== */
+
+header, .main-header {
+    background: rgba(17, 17, 17, 0.95) !important; /* خلفية داكنة معتمة لمنع رؤية النص المتداخل خلفها */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line-border);
+    padding: 14px 8%;
+    
+    /* هندسة التثبيت الذكي لمنع التضارب مع الـ promo-bar */
+    position: sticky;
+    top: 38px; /* يلتصق تماماً أسفل شريط الإعلانات ذو الـ 38 بكسل */
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* البقاء تحت البار وفوق باقي محتوى الصفحة */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ---------------------------------------------------- */
+/* ألوان وتنسيقات اللوجو الفخم والتاج (تطابق الفوتر)      */
+/* ---------------------------------------------------- */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-crown-wrapper-top {
+    width: 34px;
+    height: 34px;
+    background: rgba(214, 177, 94, 0.05);
+    border: 1px solid rgba(214, 177, 94, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.crown-top {
+    font-size: 16px;
+    color: var(--gold-light); /* استخدام متغير اللون الذهبي المعتمد عندك */
+    filter: drop-shadow(0 0 5px rgba(237, 192, 45, 0.4));
+}
+
+.brand-text-group-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+}
+
+.brand-name-top {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 900;
+    font-size: 19px;
+    color: var(--text-white);
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.brand-x-top {
+    color: var(--primary-red); /* استخدام المتغير الخاص بك للمسة الحمراء النيون */
+    font-style: normal;
+    text-shadow: 0 0 8px rgba(225, 26, 54, 0.4);
+}
+
+.brand-sub-top {
+    display: block;
+    font-size: 8px;
+    color: var(--gold-base);
+    letter-spacing: 2px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: 1px;
+    text-transform: uppercase;
+}
+
+/* ---------------------------------------------------- */
+/* ملاءمة وتوافق الهيدر مع الموبايل والـ Scroll السريع  */
+/* ---------------------------------------------------- */
+@media (max-width: 600px) {
+    header, .main-header {
+        padding: 10px 4%;
+        top: 38px; /* الحفاظ على ثبات البوزيشن أسفل البار على الهواتف أيضاً */
+    }
+    .brand-name-top {
+        font-size: 16px;
+    }
+    .brand-crown-wrapper-top {
+        width: 30px;
+        height: 30px;
+    }
+    .crown-top {
+        font-size: 14px;
+    }
+}
+/* ======================================================== */
+/* هندسة ومؤثرات قسم آراء الزبائن الفاخرة (Testimonials)     */
+/* ======================================================== */
+
+.testimonials-section {
+    padding: 80px 8%;
+    background-color: var(--bg-dark);
+    position: relative;
+}
+
+.reviews-section-badge {
+    display: table;
+    margin: 0 auto 20px;
+    background: rgba(225, 26, 54, 0.08);
+    color: var(--primary-red);
+    border: 1px solid rgba(225, 26, 54, 0.25);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* الكروت وتأثير التمرير الزجاجي المظلم */
+.tcard {
+    background-color: var(--bg-slate);
+    border: 1px solid var(--line-border);
+    border-radius: 20px;
+    padding: 30px;
+    min-width: 320px;
+    flex: 1 0 30%;
+    scroll-snap-align: start;
+    box-shadow: var(--shadow-premium);
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tcard:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.9);
+}
+
+.stars-wrapper {
+    color: var(--gold-light);
+    font-size: 18px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-size: 15.5px;
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    text-align: justify;
+    font-style: italic;
+}
+
+/* هيكلة بروفايل المستخدم السفلي */
+.user-profile-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* الدوائر الفخمة الحاضنة للإيموجيات والمشعّة بالنيون */
+.user-avatar-premium {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px; /* زوايا ناعمة حديثة مثل كروت الميزات */
+    background: #111113;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+/* تكبير حجم الإيموجي ليملأ الدائرة بشكل سينمائي */
+.user-emoji {
+    font-size: 28px;
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+/* ---------------------------------------------------- */
+/* منظومة هالات النيون التفاعلية خلف الإيموجيات (Aura Glows) */
+/* ---------------------------------------------------- */
+
+/* 1. التوهج النيوني الأحمر (كريم) */
+.red-glow-avatar {
+    border: 1px solid rgba(225, 26, 54, 0.3);
+}
+.red-glow-avatar::after {
+    content: ''; position: absolute; inset: -2px; border-radius: 16px;
+    background: var(--primary-red); z-index: 1; opacity: 0.15; filter: blur(6px);
+}
+.tcard:hover .red-glow-avatar {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 15px rgba(225, 26, 54, 0.4);
+}
+
+/* 2. التوهج النيوني الأمبر (رضا) */
+.amber-glow-avatar {
+    border: 1px solid rgba(255, 140, 0, 0.3);
+}
+.amber-glow-avatar::after {
+    content: ''; position: absolute; inset: -2px; border-radius: 16px;
+    background: var(--amber-light); z-index: 1; opacity: 0.15; filter: blur(6px);
+}
+.tcard:hover .amber-glow-avatar {
+    border-color: var(--amber-light);
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.4);
+}
+
+/* 3. التوهج النيوني الذهبي الملكي (سفيان) */
+.gold-glow-avatar {
+    border: 1px solid rgba(237, 192, 45, 0.3);
+}
+.gold-glow-avatar::after {
+    content: ''; position: absolute; inset: -2px; border-radius: 16px;
+    background: var(--gold-light); z-index: 1; opacity: 0.15; filter: blur(6px);
+}
+.tcard:hover .gold-glow-avatar {
+    border-color: var(--gold-light);
+    box-shadow: 0 0 15px rgba(237, 192, 45, 0.4);
+}
+
+/* نصوص بيانات العميل */
+.user-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.user-name {
+    font-size: 15px;
+    color: var(--text-white);
+    font-weight: 700;
+}
+
+.user-city {
+    font-size: 12.5px;
+    color: var(--text-muted);
+}
+
+/* علامة الحساب الموثق الخضراء الصغيرة */
+.verified-badge-icon {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    width: 20px;
+    height: 20px;
+    background: #10b981;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+/* ملاءمة تامة وشاملة للموبايل */
+@media (max-width: 600px) {
+    .testimonials-section {
+        padding: 60px 4%;
+    }
+    .tcard {
+        padding: 22px;
+        min-width: 290px;
+    }
+    .review-text {
+        font-size: 14.5px;
+    }
+}
+/* شريط التنويه القانوني العلوي */
+.top-disclaimer-strip {
+    background: #0c0c0e;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 7px 15px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 12.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    letter-spacing: 0.2px;
+}
+@media (max-width: 600px) {
+    .top-disclaimer-strip { font-size: 11.5px; padding: 6px 10px; }
+}
+    </style>
+</head>
+<body>
+<div class="promo-bar">
+    محدودة الكمية جداً — الدفعة الأولى من Vigor-X
+</div>
+
+<div class="top-disclaimer-strip">
+    ⚠️ مكمّل غذائي وليس دواء، غير موجّه للقاصرين.
+</div>
+
+<header class="main-header">
+  <div class="wrap header-flex">
+    
+    <div class="header-brand">
+      <div class="brand-crown-wrapper-top">
+        <span class="crown-top">♛</span>
+      </div>
+      <div class="brand-text-group-top">
+        <b class="brand-name-top">VIGOR<i class="brand-x-top">X</i></b>
+        <small class="brand-sub-top">ROYSBIO</small>
+      </div>
+    </div>
+    
+    <a href="#order" class="btn-nav-order">احجز استشارتك المجانية الآن</a>
+
+  </div>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <div class="hero-badge">✓ طبيعي 100% &nbsp;|&nbsp; ✓ الدفع عند الاستلام</div>
+        
+        <h1>طاقة و حيوية أكبر كل يوم مع <span class="lat">VIGOR-X</span></h1>
+        
+        <p>مكمّل غذائي بتركيبة مركّزة من نباتات نادرة (Tongkat Ali, Ginseng, Ortie, Sélénium) و فيتامينات — مصمّمة باش ترجّعلك دفعة الطاقة، صفاء الذهن، و الإحساس بأنّك في أحسن نسخة منك.</p>
+        
+        <div class="hero-features-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0; text-align: right;">
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--text-white); font-weight: 500;">
+                <i class="fas fa-leaf" style="color: #2ec4b6; font-size: 16px;"></i>
+                <span>100% طبيعي</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--text-white); font-weight: 500;">
+                <i class="fas fa-hand-holding-dollar" style="color: var(--gold); font-size: 16px;"></i>
+                <span>الدفع عند الاستلام</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--text-white); font-weight: 500;">
+                <i class="fas fa-user-shield" style="color: #e11a36; font-size: 16px;"></i>
+                <span>توصيل سري • 69 ولاية</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--text-white); font-weight: 500;">
+                <i class="fas fa-headset" style="color: #4cc9f0; font-size: 16px;"></i>
+                <span>مكالمة خبير مجانية</span>
+            </div>
+        </div>
+        
+        <div class="hero-cta-group">
+            <a href="#order" class="btn-main-cta">
+                اطلب الآن — خصم 50%
+            </a>
+            
+            <div class="cta-guarantee">
+                <span>تخلّص كي توصلك الطلبية • بلا أي خلاص مسبق</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hero-visual">
+        <div class="circle-bg"></div>
+        
+        <img src="1.png" alt="Vigor-X المنتج الطبيعي" class="prod-image">
+    </div>
+</section>
+
+<section class="lead-section" style="background-color: var(--bg-dark);">
+    <div class="section-title">
+        <h2>شوف بعينيك واش هو <span class="lat">Vigor-X</span>؟</h2>
+        <p>دقيقتين باش تفهم كل شي: المكونات، الفائدة، و كيفاش تستعمله.</p>
+    </div>
+    
+    <div class="vsl-video-wrapper" style="max-width: 750px; margin: 0 auto 40px; background: var(--bg-slate); border: 1px solid var(--line-border); border-radius: 24px; padding: 12px; text-align: center; box-shadow: var(--shadow-premium); overflow: hidden; position: relative;">
+    
+    <button type="button" id="audioPlayBtn" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(135deg, var(--primary-red), var(--amber-dark)); color: #ffffff; padding: 16px 28px; border: none; border-radius: 50px; font-family: 'Tajawal', sans-serif; font-size: 16px; font-weight: 800; z-index: 10; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 25px rgba(225, 26, 54, 0.6); cursor: pointer; animation: pulseAudioNotice 1.2s infinite alternate ease-in-out;">
+        <span>▶ شغّل الفيديو بالصوت</span>
+    </button>
+
+    <video 
+        id="kineticVSL"
+        src="U1.mp4" 
+        playsinline 
+        loop
+        muted
+        preload="auto" 
+        style="width: 100%; max-height: 750px; object-fit: cover; display: block; border-radius: 16px; box-shadow: inset 0 0 20px rgba(0,0,0,0.8);">
+        متصفحك لا يدعم تشغيل هذا الفيديو.
+    </video>
+
+</div>
+
+<style>
+@keyframes pulseAudioNotice {
+    0% { transform: translate(-50%, -50%) scale(1); filter: brightness(1); }
+    100% { transform: translate(-50%, -50%) scale(1.04); filter: brightness(1.2); }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("kineticVSL");
+    const audioPlayBtn = document.getElementById("audioPlayBtn");
+
+    // 1. تشغيل الفيديو صامتاً تلقائياً بمجرد السكرول إليه (بدون صوت)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                video.play().catch(err => console.log("Autoplay waiting for scroll:", err));
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(video);
+
+    // 2. الصوت لا يشتغل إلا عند الضغط على زر التشغيل الواضح فقط
+    audioPlayBtn.addEventListener("click", function() {
+        video.muted = false;
+        video.currentTime = 0;
+        video.setAttribute("controls", "true");
+        video.play().then(() => {
+            audioPlayBtn.style.display = "none";
+        }).catch(err => console.log("Audio unlock failed:", err));
+    });
+});
+</script>
+
+   
+
+<section class="vtestimonials-section">
+    <div class="section-title">
+        <span class="features-section-badge" style="display:inline-block; margin-bottom:18px;">قالوا علينا</span>
+        <h2>تجارب حقيقية مصوّرة بالفيديو</h2>
+        <p>ناس استعملوا <span class="lat">Vigor-X</span> و حابّين يشاركوك واش حسّوا — بالصوت و الصورة، بلا فلترة.</p>
+    </div>
+
+    <div class="vtestimonials-track" id="vtTrack">
+
+        <!-- شهادة فيديو 1 -->
+        <div class="vtcard" data-vt>
+            <button type="button" class="vt-play" aria-label="شغّل الشهادة">▶</button>
+            <video src="T1.mp4" playsinline loop preload="metadata"></video>
+            <div class="vt-overlay">
+                <div class="vt-name"><span class="vt-check">✔</span></div>
+                <div class="vt-role">مستعمل لفيغور أكس عندو 57 سنة</div>
+                <div class="vt-stars">★★★★★</div>
+            </div>
+        </div>
+
+        <!-- شهادة فيديو 2 -->
+        <div class="vtcard" data-vt>
+            <button type="button" class="vt-play" aria-label="شغّل الشهادة">▶</button>
+            <video src="T2.mp4" playsinline loop preload="metadata"></video>
+            <div class="vt-overlay">
+                <div class="vt-name"> <span class="vt-check">✔</span></div>
+                <div class="vt-role">شرات فيغور أكس لراجلها</div>
+                <div class="vt-stars">★★★★★</div>
+            </div>
+        </div>
+
+        <!-- بطاقة صورة 6:19 -->
+        <div class="vtcard">
+            <div class="vt-photo-badge">نتيجة حقيقية</div>
+            <img src="T.png" alt="شهادة مصوّرة لمستعمل Vigor-X" class="vt-media">
+            <div class="vt-overlay">
+                <div class="vt-name">ياسين. ح <span class="vt-check">✔</span></div>
+                <div class="vt-role">شارك تجربته بالصورة</div>
+                <div class="vt-stars">★★★★★</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="vt-swipe-hint">
+        <i class="fas fa-hand-pointer"></i>
+        <span>اسحب جانبًا لمشاهدة المزيد من الشهادات</span>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".vtcard[data-vt]");
+    cards.forEach(card => {
+        const video = card.querySelector("video");
+        const playBtn = card.querySelector(".vt-play");
+        if (!video || !playBtn) return;
+
+        playBtn.addEventListener("click", function () {
+            // أوقف باقي الفيديوهات قبل تشغيل هذا
+            document.querySelectorAll(".vtcard[data-vt] video").forEach(v => {
+                if (v !== video) {
+                    v.pause();
+                    v.muted = true;
+                    v.removeAttribute("controls");
+                    v.closest(".vtcard").classList.remove("is-playing");
+                }
+            });
+            video.muted = false;
+            video.currentTime = 0;
+            video.setAttribute("controls", "true");
+            video.play().then(() => {
+                card.classList.add("is-playing");
+            }).catch(err => console.log("Testimonial play failed:", err));
+        });
+
+        // عند انتهاء الفيديو نرجّع غلاف البطاقة
+        video.addEventListener("pause", () => {
+            if (video.ended) card.classList.remove("is-playing");
+        });
+    });
+});
+</script>
+
+<section class="features-section">
+    <div class="features-section-badge">الفوائد</div>
+
+    <div class="section-title">
+        <h2>واش يدير <span class="lat">Vigor-X</span> للراجل</h2>
+        <p>كل نقطة هنا راجعة لمكوّن حقيقي في التركيبة — كلام مدروس، بلا تهويل.</p>
+    </div>
+    
+    <div class="features-grid">
+        
+        <div class="feature-card">
+            <div class="f-icon-wrapper">
+                <div class="f-icon pulse-fire">🔥</div>
+            </div>
+            <h3>حضور و حيوية</h3>
+            <p>مستخلصات نباتية معروفة من زمان في الطب التقليدي، تشتغل على إحساسك بالحضور و الاندفاع اليومي.</p>
+            <div class="ingredient-badge">
+                <span class="lat">Tongkat Ali · Ginseng Rouge · Maca</span>
+            </div>
+        </div>
+        
+        <div class="feature-card">
+            <div class="f-icon-wrapper">
+                <div class="f-icon flash-bolt">⚡</div>
+            </div>
+            <h3>طاقة بلا هبوط</h3>
+            <p>كافيين طبيعي مع فيتامينات B تعطيك دفعة ثابتة على طول النهار — بلا الارتفاع المفاجئ و لا الـ«crash» اللي يجي بعده.</p>
+            <div class="ingredient-badge">
+                <span class="lat">Guarana · Caféine · Vit B1/B6/B12</span>
+            </div>
+        </div>
+        
+        <div class="feature-card">
+            <div class="f-icon-wrapper">
+                <div class="f-icon muscle-flex">💪</div>
+            </div>
+            <h3>دفع للأداء البدني</h3>
+            <p>تركيبة تخدم على قدرتك على التحمّل و الإحساس بالقوة وقت المجهود، سواء في القاعة ولا في نهارك العادي.</p>
+            <div class="ingredient-badge">
+                <span class="lat">Tongkat Ali · Ortie (Urtica dioica)</span>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="f-icon-wrapper">
+                <div class="f-icon DNA-grow">🧬</div>
+            </div>
+            <h3>درع ضد التعب الخلوي</h3>
+            <p>سيلينيوم و فيتامين E يوقفو في وجه الإجهاد التأكسدي — يعني خلايا تبقى أصحّ وقت أطول.</p>
+            <div class="ingredient-badge">
+                <span class="lat">Sélénium · Vitamine E</span>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="f-icon-wrapper">
+                <div class="f-icon shield-protect">🛡️</div>
+            </div>
+            <h3>توازن و صفاء</h3>
+            <p>مكوّنات نباتية تساعدك تحسّ بالاتزان و الهدوء الداخلي في خضمّ ضغط النهار و كثرة المهام.</p>
+            <div class="ingredient-badge">
+                <span class="lat">Ortie · Sélénium</span>
+            </div>
+        </div>
+
+    </div>
+    
+    
+</section>
+
+<section class="ingredients-section">
+    <div class="ingredients-section-badge">المكونات الحقيقية</div>
+
+    <div class="section-title">
+        <h2>شفافية كاملة: واش راك تاكل بالضبط</h2>
+        <p>قبل ما تشري، شوف المكونات. كل شي مكتوب بوضوح وتدرج نصي متوازن وبدون أسرار غامضة.</p>
+    </div>
+    
+    <div class="ingredients-list">
+        
+        <div class="ingredient-row">
+            <div class="ing-meta">
+                <span class="ing-number">01</span>
+                <div class="ingredient-name"><span class="lat">Tongkat Ali (100:1 Extract)</span></div>
+            </div>
+            <div class="ing-effect-highlight">
+                <span class="highlight-text red-glow">يوقد الحيوية و الاندفاع الذكوري</span>
+            </div>
+        </div>
+        
+        <div class="ingredient-row">
+            <div class="ing-meta">
+                <span class="ing-number">02</span>
+                <div class="ingredient-name"><span class="lat">Ginseng Rouge</span></div>
+            </div>
+            <div class="ing-effect-highlight">
+                <span class="highlight-text amber-glow">يطرد التعب و يرفع الطاقة</span>
+            </div>
+        </div>
+        
+        <div class="ingredient-row">
+            <div class="ing-meta">
+                <span class="ing-number">03</span>
+                <div class="ingredient-name"><span class="lat">Maca</span></div>
+            </div>
+            <div class="ing-effect-highlight">
+                <span class="highlight-text gold-glow">يشحن النشاط بشكل طبيعي</span>
+            </div>
+        </div>
+        
+        <div class="ingredient-row">
+            <div class="ing-meta">
+                <span class="ing-number">04</span>
+                <div class="ingredient-name"><span class="lat">Ortie / Urtica dioica</span></div>
+            </div>
+            <div class="ing-effect-highlight">
+                <span class="highlight-text gold-glow">يحافظ على التوازن الداخلي</span>
+            </div>
+        </div>
+        
+        <div class="ingredient-row">
+            <div class="ing-meta">
+                <span class="ing-number">05</span>
+                <div class="ingredient-name"><span class="lat">Ginkgo Biloba</span></div>
+            </div>
+            <div class="ing-effect-highlight">
+                <span class="highlight-text white-glow">ينشّط الدورة الدموية و التروية</span>
+            </div>
+        </div>
+        
+        <div class="ingredient-row">
+            <div class="ing-meta">
+                <span class="ing-number">06</span>
+                <div class="ingredient-name"><span class="lat">Sélénium + Vitamine E</span></div>
+            </div>
+            <div class="ing-effect-highlight">
+                <span class="highlight-text white-glow">يحمي الخلايا من الأكسدة</span>
+            </div>
+        </div>
+
+        <div class="ingredient-row">
+            <div class="ing-meta">
+                <span class="ing-number">07</span>
+                <div class="ingredient-name"><span class="lat">Guarana + Caféine</span></div>
+            </div>
+            <div class="ing-effect-highlight">
+                <span class="highlight-text amber-glow">يقظة و تركيز حاد</span>
+            </div>
+        </div>
+
+        <div class="ingredient-row">
+            <div class="ing-meta">
+                <span class="ing-number">08</span>
+                <div class="ingredient-name"><span class="lat">Vit B1 / B6 / B12</span></div>
+            </div>
+            <div class="ing-effect-highlight">
+                <span class="highlight-text amber-glow">تُحرّك الأيض و تُغذّي الطاقة</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="expert-section">
+    <div class="expert-section-badge">مجانًا مع كل طلبية</div>
+
+    <div class="section-title">
+        <h2>ماشي غير حبوب — معاك خبير</h2>
+        <p class="expert-disclaimer">
+            الكبسولة وحدها ما تكفيش. مع كل طلبية، تستافد من مكالمة مع خبير في الصحة يدرس حالتك و يبني معاك برنامج شخصي.
+        </p>
+    </div>
+    
+    <div class="process-map">
+        
+        <div class="process-step">
+            <div class="step-number-wrapper">
+                <div class="step-number">1</div>
+            </div>
+            <div class="step-content">
+                <h3>تطلب Vigor-X</h3>
+                <p>تعمّر معلومات الشخصية و تدير الطلبية</p>
+            </div>
+        </div>
+        
+        <div class="process-step">
+            <div class="step-number-wrapper">
+                <div class="step-number">2</div>
+            </div>
+            <div class="step-content">
+                <h3>يتصل بيك خبير من خبراءنا </h3>
+                <p>بمجرّد ما تدير طلبيّتك</p>
+            </div>
+        </div>
+        
+        <div class="process-step">
+            <div class="step-number-wrapper">
+                <div class="step-number">3</div>
+            </div>
+            <div class="step-content">
+                <h3>الخبير يدرس حالتك</h3>
+                <p>أسئلة بسيطة على نمط حياتك، طاقتك، نومك و تغذيتك — باش نفهمو وضعيتك.</p>
+            </div>
+        </div>
+        
+        <div class="process-step">
+            <div class="step-number-wrapper">
+                <div class="step-number">4</div>
+            </div>
+            <div class="step-content">
+                <h3>الخبير يديرلك برنامج شخصي ليك</h3>
+                <p>تغذية صحيّة، نوم صحي، و تسيير الضغط, مع طريقة استعمال Vigor-X الأمثل لحالتك</p>
+            </div>
+        </div>
+        
+        <div class="process-step">
+            <div class="step-number-wrapper">
+                <div class="step-number">5</div>
+            </div>
+            <div class="step-content">
+                <h3>رايح تلاحظ الفرق</h3>
+                <p>بمتابعة شخصيّة بعد الإنتهاء من البرنامج</p>
+            </div>
+        </div>
+
+    </div>
+    
+    
+</section>
+
+<section class="guarantees-section">
+    <div class="guarantees-section-badge">ضماناتنا</div>
+    
+    <div class="section-title">
+        <h2>تطلب بلا مخاطر</h2>
+    </div>
+    
+    <div class="guarantees-grid">
+        <div class="guarantee-card">
+            <div class="g-icon-wrapper">
+                <div class="g-icon pulse-gold">💵</div>
+            </div>
+            <h3>الدفع عند الاستلام</h3>
+            <p>ما تخلّص والو حتى توصلك الطلبية لباب دارك وتفحصها بيدك.</p>
+        </div>
+        
+        <div class="guarantee-card">
+            <div class="g-icon-wrapper">
+                <div class="g-icon aura-secret">🤫</div>
+            </div>
+            <h3>توصيل سري</h3>
+            <p>تغليف عادي محكم بلا اسم المنتج ولا أي تفاصيل خارجية — خصوصيتك محفوظة 100%.</p>
+        </div>
+        
+        <div class="guarantee-card">
+            <div class="g-icon-wrapper">
+                <div class="g-icon truck-move">🚚</div>
+            </div>
+            <h3>توصيل لـ 69 ولاية</h3>
+            <p>نوصلوك وين ما كنت في كامل التراب الوطني في وقت قياسي.</p>
+        </div>
+        
+        <div class="guarantee-card">
+            <div class="g-icon-wrapper">
+                <div class="g-icon phone-glow">☎️</div>
+            </div>
+            <h3>مكالمة خبير</h3>
+            <p>مرافقة شخصية مجانية مع كل طلبية لبناء روتينك المعيشي الصحي.</p>
+        </div>
+    </div>
+</section>
+
+<section class="usage-section">
+    <div class="usage-section-badge">طريقة الاستعمال</div>
+    
+    <div class="section-title">
+        <h2>بسيطة و سهلة</h2>
+    </div>
+    
+    <div class="usage-container">
+        <div class="usage-card morning-card">
+            <div class="time-header">
+                <span class="time-icon">☀️</span>
+                <h3>الصباح</h3>
+            </div>
+            <div class="time-body">
+                <p>كبسولة وحدة بعد فطور الصباح بـ <span class="lat-num">30</span> دقيقة.</p>
+            </div>
+            <div class="usage-glow-line"></div>
+        </div>
+        
+        <div class="usage-card night-card">
+            <div class="time-header">
+                <span class="time-icon">🌙</span>
+                <h3>الليل</h3>
+            </div>
+            <div class="time-body">
+                <p>كبسولة وحدة بعد عشاء الليل بـ <span class="lat-num">30</span> دقيقة.</p>
+            </div>
+            <div class="usage-glow-line"></div>
+        </div>
+    </div>
+</section>
+
+ 
+
+        <section id="order" class="order-section">
+  <div class="wrap">
+    <div class="order-card-premium">
+      
+      <div class="discount-badge-flash">خصم 50% لفترة محدودة</div>
+
+      <div class="order-header">
+        <h2>اطلب Vigor-X الآن</h2>
+        <p class="sb">عمّر معلوماتك و نتواصلو معاك باش نأكدو الطلبية و موعد مكالمة الخبير الصحي.</p>
+      </div>
+
+      <div class="order-form-body">
+        
+        <!-- حقل مصيدة مخفي لكشف البوتات (يجب أن يبقى فارغاً) -->
+        <input type="text" id="company" name="company" tabindex="-1" autocomplete="off"
+               aria-hidden="true"
+               style="position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;">
+        
+        <div class="field-wrapper">
+          <label for="nm">الاسم الكامل</label>
+          <div class="input-with-icon">
+            <span class="input-icon">👤</span>
+            <input id="nm" type="text" placeholder="مثال: كريم بن علي" autocomplete="name" required>
+          </div>
+        </div>
+
+        <div class="field-wrapper">
+          <label for="ph">رقم الهاتف</label>
+          <div class="input-with-icon">
+            <span class="input-icon">📞</span>
+            <input id="ph" type="tel" placeholder="07XX XX XX XX" autocomplete="tel" inputmode="tel" required>
+          </div>
+        </div>
+
+        <div class="field-wrapper">
+          <label for="ad">الولاية + البلدية + العنوان</label>
+          <div class="input-with-icon align-top">
+            <span class="input-icon">📍</span>
+            <textarea id="ad" placeholder="مثال: الجزائر — باب الزوار — شارع ..." required></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="recap-box-premium">
+        <div class="recap-product-info">
+          <span class="recap-dot"></span>
+          <span class="l">Vigor-X — علبة 60 كبسولة</span>
+        </div>
+        <div class="recap-price-tag">
+          <span class="old-price lat">16900 دج</span>
+          <span class="new-price lat">7990 <small>دج</small></span>
+        </div>
+      </div>
+
+      <button class="cta-submit-button" id="sendWa">
+        <span class="btn-flash-effect"></span>
+        <span class="btn-text" id="btnText">✅  أكّد طلبيتك الأن</span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById("sendWa").addEventListener("click", function() {
+    // 1. رابط الـ Web App URL الخاص بـ Apps Script
+    const scriptURL = "https://script.google.com/macros/s/AKfycbz7jYQCiE4-WiJWf12P6kIv-FJ70jfwW-BmoXqAOG7IyWBFXN3c_u10Wj5FSnJScDpb/exec";
+
+    // يجب أن يطابق هذا التوكن السري نفس القيمة في ملف Apps Script
+    const SECRET_TOKEN = "VIGORX-ROYSBIO-2026"; // ← غيّر هذا التوكن في Apps Script بنفس القيمة
+
+    // 2. جلب القيم من الحقول و إزالة المسافات الزائدة
+    const name = document.getElementById("nm").value.trim();
+    const phone = document.getElementById("ph").value.trim();
+    const address = document.getElementById("ad").value.trim();
+    const honeypot = document.getElementById("company").value.trim();
+    const btnText = document.getElementById("btnText");
+    const submitBtn = document.getElementById("sendWa");
+
+    // 3. مصيدة البوتات: إذا تم ملء الحقل المخفي نوقف بصمت
+    if (honeypot !== "") {
+        console.warn("Honeypot triggered — ignoring submission.");
+        return;
+    }
+
+    // 4. التحقق من الاسم
+    if (name.length < 3) {
+        alert("من فضلك أدخل اسمك الكامل (3 أحرف على الأقل).");
+        return;
+    }
+
+    // 5. التحقق من صحة رقم الهاتف الجزائري
+    const cleanPhone = phone.replace(/[\s\-]/g, "");
+    const phoneValid = /^(0(5|6|7)[0-9]{8}|(\+213)(5|6|7)[0-9]{8})$/.test(cleanPhone);
+    if (!phoneValid) {
+        alert("من فضلك أدخل رقم هاتف جزائري صحيح (مثال: 07XXXXXXXX).");
+        return;
+    }
+
+    // 6. التحقق من العنوان
+    if (address.length < 5) {
+        alert("من فضلك أدخل الولاية و البلدية و العنوان بالتفصيل.");
+        return;
+    }
+
+    // 7. تغيير حالة الزر أثناء الإرسال
+    submitBtn.style.pointerEvents = "none";
+    submitBtn.style.opacity = "0.7";
+    btnText.innerHTML = "⏳ جاري إرسال طلبك...";
+
+    // 8. تجهيز البيانات
+    const formData = new URLSearchParams();
+    formData.append("token", SECRET_TOKEN);
+    formData.append("name", name);
+    formData.append("phone", cleanPhone);
+    formData.append("address", address);
+    formData.append("company", honeypot); // الحقل المصيدة (يجب أن يكون فارغاً)
+
+    function resetButton(label) {
+        submitBtn.style.pointerEvents = "auto";
+        submitBtn.style.opacity = "1";
+        btnText.innerHTML = label;
+    }
+
+    // 9. الإرسال الحقيقي بدون no-cors لكي نقرأ نتيجة السيرفر فعلاً
+    fetch(scriptURL, {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data && data.status === "success") {
+            // النجاح الحقيقي فقط عندما يؤكد السيرفر الحفظ
+            btnText.innerHTML = "🎉 تم تسجيل طلبك بنجاح!";
+            submitBtn.style.background = "#10b981";
+
+            alert("شكراً لك! تم استقبال طلبك بنجاح، و سيتصل بك فريقنا قريباً لتأكيد المعلومات.");
+
+            document.getElementById("nm").value = "";
+            document.getElementById("ph").value = "";
+            document.getElementById("ad").value = "";
+
+            setTimeout(() => {
+                submitBtn.style.background = "";
+                resetButton("✅  أكّد طلبيتك الأن");
+            }, 3000);
+        } else {
+            // السيرفر رد لكن رفض الطلب (بيانات غير صالحة أو توكن خاطئ)
+            console.error("Server rejected:", data);
+            alert("عذراً، تعذّر تسجيل الطلب: " + (data && data.message ? data.message : "بيانات غير صالحة") + ". أعد المحاولة من فضلك.");
+            resetButton("❌ حدث خطأ، أعد المحاولة");
+        }
+    })
+    .catch(error => {
+        // فشل شبكة أو فشل في الوصول للسيرفر
+        console.error("Network error!", error);
+        alert("عذراً، حدث خطأ في الاتصال أثناء إرسال الطلب. تحقق من الإنترنت و أعد المحاولة.");
+        resetButton("❌ حدث خطأ، أعد المحاولة");
+    });
+});
+</script>
+      
+      <div class="trust-footer-meta">
+        <span>🔒 تخلّص عند الاستلام</span>
+        <span class="divider">•</span>
+        <span>🤫 توصيل سري وآمن لـ 69 ولاية</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+        
+    </div>
+</section>
+
+<section id="faq" class="faq-section">
+  <div class="wrap">
+    
+    <div class="faq-shead">
+      <span class="eyebrow-badge">أسئلة شائعة</span>
+      <h2>كل ما تحب تعرف</h2>
+    </div>
+    
+    <div class="faq-wrapper">
+      
+      <details class="faq-item" open>
+        <summary class="faq-trigger">
+          <span class="faq-title">واش المنتج طبيعي؟</span>
+          <span class="faq-icon-arrow"></span>
+        </summary>
+        <div class="faq-content">
+          <p>إيه، <span class="highlight-brand">Vigor-X</span> مكمّل غذائي طبيعي 100% بمكونات نباتية نادرة وفيتامينات — خالٍ تماماً من الهرمونات الاصطناعية والمواد الكيميائية. العبارة الرسمية <span class="lat-quote">«Complément alimentaire»</span> مكتوبة بوضوح على العلبة لضمان أمانك الكامل.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-trigger">
+          <span class="faq-title">كيفاش نخلّص؟</span>
+          <span class="faq-icon-arrow"></span>
+        </summary>
+        <div class="faq-content">
+          <p>العملية آمنة ومريحة جداً عبر نظام <span class="highlight-brand">الدفع عند الاستلام (COD)</span>. ما تخلّص حتى فرنك مسبقاً، حتى توصلك الطلبية لمكتب التوصيل وتستلم علبتك بيدك.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-trigger">
+          <span class="faq-title">واش التوصيل سري؟</span>
+          <span class="faq-icon-arrow"></span>
+        </summary>
+        <div class="faq-content">
+          <p>إيه، سري وآمن لأقصى درجة. التغليف الخارجي عادي جداً ومحكم الإغلاق **بدون كتابة اسم المنتج أو أي تفاصيل حساسة** على الطرد من الخارج. خصوصيتك الكاملة هي أولويتنا الصارمة.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-trigger">
+          <span class="faq-title">وقتاش نشوف النتائج؟</span>
+          <span class="faq-icon-arrow"></span>
+        </summary>
+        <div class="faq-content">
+          <p>النتائج تختلف من شخص لآخر حسب طبيعة الجسم، العمر، ونمط الحياة اليومي. لهذا السبب بالذات حنا ما نبيعولكش علبة ونخلوهالك؛ بل نوفرولك <span class="highlight-brand">مكالمة مجانية مع خبير صحي</span> باش يدرس وضعيتك بدقة ويعطيك البرنامج المتكامل اللي يضمنلك أسرع وأقوى فعالية ممكنة.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-trigger">
+          <span class="faq-title">كيفاش تخدم مكالمة الخبير؟</span>
+          <span class="faq-icon-arrow"></span>
+        </summary>
+        <div class="faq-content">
+          <p>بعد ملء معلوماتك، يتصل بك خبير من فريقنا لمعرفة مشاكلك بالضبط، يدرس نمط حياتك (تغذيتك٫ نومك٫ مستويات الضغط...) و يبني معاك حمية و خطة عادات يومية شخصية مرافقة لاستعمال Vigor-X. يتم بعدها تأكيد الطلبية و التوصيل<span class="highlight-brand">Vigor-X</span>.</p>
+        </div>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+<footer class="premium-footer">
+  <div class="wrap">
+    
+    <div class="footer-brand">
+      <div class="brand-crown-wrapper">
+        <span class="crown">♛</span>
+      </div>
+      <div class="brand-text-group">
+        <b class="brand-name">VIGOR<i class="brand-x">X</i></b>
+        <small class="brand-sub">ROYSBIO</small>
+      </div>
+    </div>
+    
+    <div class="legal-disclaimer-box">
+      <p class="leg">Vigor-X هو مكمّل غذائي و ليس دواءً. لا يُعالج و لا يُشخّص أي مرض، و لا يُغني عن نظام غذائي متوازن و نمط حياة صحي. إذا كنت تتبع علاجًا أو عندك حالة صحية، استشر طبيبك قبل الاستعمال. غير موجّه للقاصرين.</p>
+    </div>
+    
+    <div class="footer-bottom-line">
+      <p class="cp">© 2026 <span class="lat-footer">ROYSBIO — Vigor-X</span>. كل الحقوق محفوظة.</p>
+    </div>
+
+  </div>
+</footer>
+
+<div class="sticky-cta-holder">
+  <div class="sticky-in">
+    
+    <div class="sticky-price-display">
+      <span class="nw lat-price">7990<small>دج</small></span>
+      <span class="o lat-price-old">16900 دج</span>
+    </div>
+    
+    <a href="#order" class="sticky-action-btn">
+      <span class="sticky-btn-pulse"></span>
+      <span class="sticky-btn-text">اطلب الآن — خصم 50%</span>
+    </a>
+    
+  </div>
+</div>
+
+    <script>
+        // عداد الاستعجال التنازلي التفاعلي (يعمل فقط إذا وُجدت عناصر العداد)
+        function countdown() {
+            const hrEl = document.getElementById('hr');
+            const minEl = document.getElementById('min');
+            const secEl = document.getElementById('sec');
+            if (!hrEl || !minEl || !secEl) return; // لا يوجد عداد في الصفحة
+
+            let hours = 1;
+            let minutes = 24;
+            let seconds = 59;
+
+            const timer = setInterval(() => {
+                if (seconds > 0) {
+                    seconds--;
+                } else {
+                    if (minutes > 0) {
+                        minutes--;
+                        seconds = 59;
+                    } else {
+                        if (hours > 0) {
+                            hours--;
+                            minutes = 59;
+                            seconds = 59;
+                        } else {
+                            clearInterval(timer);
+                        }
+                    }
+                }
+                hrEl.innerText = hours < 10 ? '0' + hours : hours;
+                minEl.innerText = minutes < 10 ? '0' + minutes : minutes;
+                secEl.innerText = seconds < 10 ? '0' + seconds : seconds;
+            }, 1000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            countdown();
+
+            // حماية ضد العناصر غير الموجودة لتجنّب توقف السكربت
+            const leadForm = document.getElementById('leadForm');
+            if (leadForm) {
+                leadForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    e.target.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

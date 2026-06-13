@@ -3616,11 +3616,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script>
 document.getElementById("sendWa").addEventListener("click", function() {
-    // 1. رابط الـ Web App URL الخاص بـ Apps Script
-    const scriptURL = "https://script.google.com/macros/s/AKfycbznrTnMH-pLIfII0RS5EjpGMVjVylCPdaHx6XrBUhMl5Eo9rsIsmfqfWFrdCN-zYLG8/exec";
-
-    // يجب أن يطابق هذا التوكن السري نفس القيمة في ملف Apps Script
-    const SECRET_TOKEN = "VIGORX-ROYSBIO-2026"; // ← غيّر هذا التوكن في Apps Script بنفس القيمة
+    // 1. نقطة استقبال الطلبات عبر Web3Forms (بديل مستقل عن جوجل)
+    const ENDPOINT = "https://api.web3forms.com/submit";
+    const ACCESS_KEY = "965c72fa-7e4b-434a-be1b-b712806b0d8a";
 
     // 2. جلب القيم من الحقول و إزالة المسافات الزائدة
     const name = document.getElementById("nm").value.trim();
@@ -3661,13 +3659,17 @@ document.getElementById("sendWa").addEventListener("click", function() {
     submitBtn.style.opacity = "0.7";
     btnText.innerHTML = "⏳ جاري إرسال طلبك...";
 
-    // 8. تجهيز البيانات
-    const formData = new URLSearchParams();
-    formData.append("token", SECRET_TOKEN);
-    formData.append("name", name);
-    formData.append("phone", cleanPhone);
-    formData.append("address", address);
-    formData.append("company", honeypot); // الحقل المصيدة (يجب أن يكون فارغاً)
+    // 8. تجهيز البيانات لإرسالها إلى Web3Forms
+    const payload = {
+        access_key: ACCESS_KEY,
+        subject: "🛒 طلبية جديدة — Vigor-X",
+        from_name: "Vigor-X Landing Page",
+        botcheck: honeypot, // حقل مكافحة البوتات الخاص بـ Web3Forms
+        // الحقول الفعلية للطلب
+        "الاسم": name,
+        "الهاتف": cleanPhone,
+        "العنوان": address
+    };
 
     function resetButton(label) {
         submitBtn.style.pointerEvents = "auto";
@@ -3675,18 +3677,19 @@ document.getElementById("sendWa").addEventListener("click", function() {
         btnText.innerHTML = label;
     }
 
-    // 9. الإرسال الحقيقي بدون no-cors لكي نقرأ نتيجة السيرفر فعلاً
-    fetch(scriptURL, {
+    // 9. الإرسال إلى Web3Forms و قراءة النتيجة فعلاً
+    fetch(ENDPOINT, {
         method: "POST",
-        body: formData,
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-        }
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
     })
     .then(response => response.json())
     .then(data => {
-        if (data && data.status === "success") {
-            // النجاح الحقيقي فقط عندما يؤكد السيرفر الحفظ
+        if (data && data.success === true) {
+            // النجاح الحقيقي فقط عندما يؤكد السيرفر الاستقبال
             btnText.innerHTML = "🎉 تم تسجيل طلبك بنجاح!";
             submitBtn.style.background = "#10b981";
 
@@ -3701,7 +3704,7 @@ document.getElementById("sendWa").addEventListener("click", function() {
                 resetButton("✅  أكّد طلبيتك الأن");
             }, 3000);
         } else {
-            // السيرفر رد لكن رفض الطلب (بيانات غير صالحة أو توكن خاطئ)
+            // السيرفر رد لكن رفض الطلب
             console.error("Server rejected:", data);
             alert("عذراً، تعذّر تسجيل الطلب: " + (data && data.message ? data.message : "بيانات غير صالحة") + ". أعد المحاولة من فضلك.");
             resetButton("❌ حدث خطأ، أعد المحاولة");

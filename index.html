@@ -3023,6 +3023,70 @@ header, .main-header {
     .top-disclaimer-strip { font-size: 11.5px; padding: 6px 10px; }
 }
     </style>
+<style>
+/* ===== Gold update: hero trust pills + golden order card ===== */
+.hero-gold-pills{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:22px 0 28px;
+}
+.hero-gold-pill{
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  min-height:52px; padding:12px 16px; border-radius:14px;
+  background:linear-gradient(135deg,var(--gold-light),var(--amber-light));
+  color:#1c1305; font-family:'Tajawal',sans-serif; font-weight:800;
+  font-size:14.5px; line-height:1.35;
+  border:1px solid rgba(255,255,255,0.28);
+  box-shadow:0 6px 18px rgba(255,140,0,0.22), inset 0 1px 0 rgba(255,255,255,0.35);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.hero-gold-pill span{ color:#1c1305; font-weight:800; }
+.hero-gold-pill:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(255,140,0,0.32), inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+/* ---- Golden order card (was dark, now bright & attention-grabbing) ---- */
+.order-card-premium{
+  background:linear-gradient(158deg,#f6d65b 0%,#ecc049 46%,#e0a836 100%) !important;
+  border:2px solid #c98a1f !important;
+  box-shadow:0 40px 80px -20px rgba(0,0,0,0.85), 0 0 55px rgba(237,192,45,0.30) !important;
+}
+.order-header h2{ color:#1c1305 !important; text-shadow:none !important; }
+.order-header .sb{ color:#4a3309 !important; }
+.field-wrapper label{ color:#3a2906 !important; font-weight:800 !important; }
+
+/* Input fields: warm cream on the gold card, dark high-contrast text */
+.input-with-icon input,
+.input-with-icon textarea{
+  background:#fffaf0 !important; color:#1c1305 !important;
+  border:1.5px solid rgba(140,96,12,0.40) !important;
+  box-shadow:inset 0 2px 4px rgba(120,80,10,0.12) !important;
+}
+.input-with-icon input::placeholder,
+.input-with-icon textarea::placeholder{ color:#9c7a3a !important; opacity:1; }
+.input-with-icon input:focus,
+.input-with-icon textarea:focus{
+  background:#fffdf8 !important; border-color:#8c5a12 !important;
+  box-shadow:0 0 0 3px rgba(176,120,20,0.28), inset 0 2px 4px rgba(120,80,10,0.10) !important;
+}
+.input-icon{ color:rgba(60,40,6,0.55) !important; }
+
+/* Order-summary (recap) box: lighter golden panel, price in brand red to pop */
+.recap-box-premium{
+  background:linear-gradient(135deg, rgba(255,255,255,0.45), rgba(255,255,255,0.18)) !important;
+  border:1.5px solid rgba(120,80,10,0.35) !important;
+}
+.recap-box-premium .l{ color:#2a1d06 !important; }
+.recap-product-info .recap-dot{ background:#b5121f !important; box-shadow:0 0 8px rgba(181,18,31,0.65) !important; }
+.recap-price-tag .old-price{ color:#8a6a2a !important; }
+.recap-price-tag .new-price{ color:#b5121f !important; text-shadow:none !important; }
+.recap-price-tag .new-price small{ color:#b5121f !important; }
+
+/* Mobile: stack hero pills, keep gold card legible */
+@media (max-width:600px){
+  .hero-gold-pills{ grid-template-columns:1fr; gap:10px; margin:18px 0 24px; }
+  .hero-gold-pill{ min-height:0; font-size:14px; padding:12px 14px; }
+}
+</style>
 </head>
 <body>
 <div class="promo-bar">
@@ -3059,23 +3123,11 @@ header, .main-header {
         
         <p>مكمّل غذائي بتركيبة مركّزة من نباتات نادرة (Tongkat Ali, Ginseng, Ortie, Sélénium) و فيتامينات — مصمّمة باش ترجّعلك دفعة الطاقة، صفاء الذهن، و الإحساس بأنّك في أحسن نسخة منك.</p>
         
-        <div class="hero-features-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0; text-align: right;">
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--text-white); font-weight: 500;">
-                <i class="fas fa-leaf" style="color: #2ec4b6; font-size: 16px;"></i>
-                <span>100% طبيعي</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--text-white); font-weight: 500;">
-                <i class="fas fa-hand-holding-dollar" style="color: var(--gold); font-size: 16px;"></i>
-                <span>الدفع عند الاستلام</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--text-white); font-weight: 500;">
-                <i class="fas fa-user-shield" style="color: #e11a36; font-size: 16px;"></i>
-                <span>توصيل سري • 69 ولاية</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--text-white); font-weight: 500;">
-                <i class="fas fa-headset" style="color: #4cc9f0; font-size: 16px;"></i>
-                <span>مكالمة خبير مجانية</span>
-            </div>
+        <div class="hero-gold-pills">
+            <div class="hero-gold-pill"><span>100% طبيعي</span></div>
+            <div class="hero-gold-pill"><span>توصيل مجّاني و سري • 69 ولاية</span></div>
+            <div class="hero-gold-pill"><span>مكالمة مجانيّة مع خبير صحّة</span></div>
+            <div class="hero-gold-pill"><span>+ ريجيم و متابعة شخصيّة</span></div>
         </div>
         
         <div class="hero-cta-group">
@@ -3157,6 +3209,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+
+</section>
 
    
 
@@ -3313,6 +3367,182 @@ document.addEventListener("DOMContentLoaded", function () {
     
     
 </section>
+
+<section id="order" class="order-section">
+  <div class="wrap">
+    <div class="order-card-premium">
+      
+      <div class="discount-badge-flash">خصم 50% لفترة محدودة</div>
+
+      <div class="order-header">
+        <h2>اطلب Vigor-X الآن</h2>
+        <p class="sb">عمّر معلوماتك و نتواصلو معاك باش نأكدو الطلبية و موعد مكالمة الخبير الصحي.</p>
+      </div>
+
+      <div class="order-form-body">
+        
+        <!-- حقل مصيدة مخفي لكشف البوتات (يجب أن يبقى فارغاً) -->
+        <input type="text" id="company" name="company" tabindex="-1" autocomplete="off"
+               aria-hidden="true"
+               style="position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;">
+        
+        <div class="field-wrapper">
+          <label for="nm">الاسم الكامل</label>
+          <div class="input-with-icon">
+            <span class="input-icon">👤</span>
+            <input id="nm" type="text" placeholder="مثال: كريم بن علي" autocomplete="name" required>
+          </div>
+        </div>
+
+        <div class="field-wrapper">
+          <label for="ph">رقم الهاتف</label>
+          <div class="input-with-icon">
+            <span class="input-icon">📞</span>
+            <input id="ph" type="tel" placeholder="07XX XX XX XX" autocomplete="tel" inputmode="tel" required>
+          </div>
+        </div>
+
+        <div class="field-wrapper">
+          <label for="ad">الولاية + البلدية + العنوان</label>
+          <div class="input-with-icon align-top">
+            <span class="input-icon">📍</span>
+            <textarea id="ad" placeholder="مثال: الجزائر — باب الزوار — شارع ..." required></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="recap-box-premium">
+        <div class="recap-product-info">
+          <span class="recap-dot"></span>
+          <span class="l">Vigor-X — علبة 60 كبسولة</span>
+        </div>
+        <div class="recap-price-tag">
+          <span class="old-price lat">16900 دج</span>
+          <span class="new-price lat">7990 <small>دج</small></span>
+        </div>
+      </div>
+
+      <button class="cta-submit-button" id="sendWa">
+        <span class="btn-flash-effect"></span>
+        <span class="btn-text" id="btnText">✅  أكّد طلبيتك الأن</span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById("sendWa").addEventListener("click", function() {
+    // 1. نقطة استقبال الطلبات عبر Web3Forms (بديل مستقل عن جوجل)
+    const ENDPOINT = "https://api.web3forms.com/submit";
+    const ACCESS_KEY = "965c72fa-7e4b-434a-be1b-b712806b0d8a";
+
+    // 2. جلب القيم من الحقول و إزالة المسافات الزائدة
+    const name = document.getElementById("nm").value.trim();
+    const phone = document.getElementById("ph").value.trim();
+    const address = document.getElementById("ad").value.trim();
+    const honeypot = document.getElementById("company").value.trim();
+    const btnText = document.getElementById("btnText");
+    const submitBtn = document.getElementById("sendWa");
+
+    // 3. مصيدة البوتات: إذا تم ملء الحقل المخفي نوقف بصمت
+    if (honeypot !== "") {
+        console.warn("Honeypot triggered — ignoring submission.");
+        return;
+    }
+
+    // 4. التحقق من الاسم
+    if (name.length < 3) {
+        alert("من فضلك أدخل اسمك الكامل (3 أحرف على الأقل).");
+        return;
+    }
+
+    // 5. التحقق من صحة رقم الهاتف الجزائري
+    const cleanPhone = phone.replace(/[\s\-]/g, "");
+    const phoneValid = /^(0(5|6|7)[0-9]{8}|(\+213)(5|6|7)[0-9]{8})$/.test(cleanPhone);
+    if (!phoneValid) {
+        alert("من فضلك أدخل رقم هاتف جزائري صحيح (مثال: 07XXXXXXXX).");
+        return;
+    }
+
+    // 6. التحقق من العنوان
+    if (address.length < 5) {
+        alert("من فضلك أدخل الولاية و البلدية و العنوان بالتفصيل.");
+        return;
+    }
+
+    // 7. تغيير حالة الزر أثناء الإرسال
+    submitBtn.style.pointerEvents = "none";
+    submitBtn.style.opacity = "0.7";
+    btnText.innerHTML = "⏳ جاري إرسال طلبك...";
+
+    // 8. تجهيز البيانات لإرسالها إلى Web3Forms
+    const payload = {
+        access_key: ACCESS_KEY,
+        subject: "🛒 طلبية جديدة — Vigor-X",
+        from_name: "Vigor-X Landing Page",
+        botcheck: honeypot, // حقل مكافحة البوتات الخاص بـ Web3Forms
+        // الحقول الفعلية للطلب
+        "الاسم": name,
+        "الهاتف": cleanPhone,
+        "العنوان": address
+    };
+
+    function resetButton(label) {
+        submitBtn.style.pointerEvents = "auto";
+        submitBtn.style.opacity = "1";
+        btnText.innerHTML = label;
+    }
+
+    // 9. الإرسال إلى Web3Forms و قراءة النتيجة فعلاً
+    fetch(ENDPOINT, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data && data.success === true) {
+            // النجاح الحقيقي فقط عندما يؤكد السيرفر الاستقبال
+            btnText.innerHTML = "🎉 تم تسجيل طلبك بنجاح!";
+            submitBtn.style.background = "#10b981";
+
+            alert("شكراً لك! تم استقبال طلبك بنجاح، و سيتصل بك فريقنا قريباً لتأكيد المعلومات.");
+
+            document.getElementById("nm").value = "";
+            document.getElementById("ph").value = "";
+            document.getElementById("ad").value = "";
+
+            setTimeout(() => {
+                submitBtn.style.background = "";
+                resetButton("✅  أكّد طلبيتك الأن");
+            }, 3000);
+        } else {
+            // السيرفر رد لكن رفض الطلب
+            console.error("Server rejected:", data);
+            alert("عذراً، تعذّر تسجيل الطلب: " + (data && data.message ? data.message : "بيانات غير صالحة") + ". أعد المحاولة من فضلك.");
+            resetButton("❌ حدث خطأ، أعد المحاولة");
+        }
+    })
+    .catch(error => {
+        // فشل شبكة أو فشل في الوصول للسيرفر
+        console.error("Network error!", error);
+        alert("عذراً، حدث خطأ في الاتصال أثناء إرسال الطلب. تحقق من الإنترنت و أعد المحاولة.");
+        resetButton("❌ حدث خطأ، أعد المحاولة");
+    });
+});
+</script>
+      
+      <div class="trust-footer-meta">
+        <span>🔒 تخلّص عند الاستلام</span>
+        <span class="divider">•</span>
+        <span>🤫 توصيل سري وآمن لـ 69 ولاية</span>
+      </div>
+
 
 <section class="ingredients-section">
     <div class="ingredients-section-badge">المكونات الحقيقية</div>
@@ -3545,190 +3775,6 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             <div class="usage-glow-line"></div>
         </div>
-    </div>
-</section>
-
- 
-
-        <section id="order" class="order-section">
-  <div class="wrap">
-    <div class="order-card-premium">
-      
-      <div class="discount-badge-flash">خصم 50% لفترة محدودة</div>
-
-      <div class="order-header">
-        <h2>اطلب Vigor-X الآن</h2>
-        <p class="sb">عمّر معلوماتك و نتواصلو معاك باش نأكدو الطلبية و موعد مكالمة الخبير الصحي.</p>
-      </div>
-
-      <div class="order-form-body">
-        
-        <!-- حقل مصيدة مخفي لكشف البوتات (يجب أن يبقى فارغاً) -->
-        <input type="text" id="company" name="company" tabindex="-1" autocomplete="off"
-               aria-hidden="true"
-               style="position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;">
-        
-        <div class="field-wrapper">
-          <label for="nm">الاسم الكامل</label>
-          <div class="input-with-icon">
-            <span class="input-icon">👤</span>
-            <input id="nm" type="text" placeholder="مثال: كريم بن علي" autocomplete="name" required>
-          </div>
-        </div>
-
-        <div class="field-wrapper">
-          <label for="ph">رقم الهاتف</label>
-          <div class="input-with-icon">
-            <span class="input-icon">📞</span>
-            <input id="ph" type="tel" placeholder="07XX XX XX XX" autocomplete="tel" inputmode="tel" required>
-          </div>
-        </div>
-
-        <div class="field-wrapper">
-          <label for="ad">الولاية + البلدية + العنوان</label>
-          <div class="input-with-icon align-top">
-            <span class="input-icon">📍</span>
-            <textarea id="ad" placeholder="مثال: الجزائر — باب الزوار — شارع ..." required></textarea>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="recap-box-premium">
-        <div class="recap-product-info">
-          <span class="recap-dot"></span>
-          <span class="l">Vigor-X — علبة 60 كبسولة</span>
-        </div>
-        <div class="recap-price-tag">
-          <span class="old-price lat">16900 دج</span>
-          <span class="new-price lat">7990 <small>دج</small></span>
-        </div>
-      </div>
-
-      <button class="cta-submit-button" id="sendWa">
-        <span class="btn-flash-effect"></span>
-        <span class="btn-text" id="btnText">✅  أكّد طلبيتك الأن</span>
-      </button>
-
-    </div>
-  </div>
-</section>
-
-<script>
-document.getElementById("sendWa").addEventListener("click", function() {
-    // 1. نقطة استقبال الطلبات عبر Web3Forms (بديل مستقل عن جوجل)
-    const ENDPOINT = "https://api.web3forms.com/submit";
-    const ACCESS_KEY = "965c72fa-7e4b-434a-be1b-b712806b0d8a";
-
-    // 2. جلب القيم من الحقول و إزالة المسافات الزائدة
-    const name = document.getElementById("nm").value.trim();
-    const phone = document.getElementById("ph").value.trim();
-    const address = document.getElementById("ad").value.trim();
-    const honeypot = document.getElementById("company").value.trim();
-    const btnText = document.getElementById("btnText");
-    const submitBtn = document.getElementById("sendWa");
-
-    // 3. مصيدة البوتات: إذا تم ملء الحقل المخفي نوقف بصمت
-    if (honeypot !== "") {
-        console.warn("Honeypot triggered — ignoring submission.");
-        return;
-    }
-
-    // 4. التحقق من الاسم
-    if (name.length < 3) {
-        alert("من فضلك أدخل اسمك الكامل (3 أحرف على الأقل).");
-        return;
-    }
-
-    // 5. التحقق من صحة رقم الهاتف الجزائري
-    const cleanPhone = phone.replace(/[\s\-]/g, "");
-    const phoneValid = /^(0(5|6|7)[0-9]{8}|(\+213)(5|6|7)[0-9]{8})$/.test(cleanPhone);
-    if (!phoneValid) {
-        alert("من فضلك أدخل رقم هاتف جزائري صحيح (مثال: 07XXXXXXXX).");
-        return;
-    }
-
-    // 6. التحقق من العنوان
-    if (address.length < 5) {
-        alert("من فضلك أدخل الولاية و البلدية و العنوان بالتفصيل.");
-        return;
-    }
-
-    // 7. تغيير حالة الزر أثناء الإرسال
-    submitBtn.style.pointerEvents = "none";
-    submitBtn.style.opacity = "0.7";
-    btnText.innerHTML = "⏳ جاري إرسال طلبك...";
-
-    // 8. تجهيز البيانات لإرسالها إلى Web3Forms
-    const payload = {
-        access_key: ACCESS_KEY,
-        subject: "🛒 طلبية جديدة — Vigor-X",
-        from_name: "Vigor-X Landing Page",
-        botcheck: honeypot, // حقل مكافحة البوتات الخاص بـ Web3Forms
-        // الحقول الفعلية للطلب
-        "الاسم": name,
-        "الهاتف": cleanPhone,
-        "العنوان": address
-    };
-
-    function resetButton(label) {
-        submitBtn.style.pointerEvents = "auto";
-        submitBtn.style.opacity = "1";
-        btnText.innerHTML = label;
-    }
-
-    // 9. الإرسال إلى Web3Forms و قراءة النتيجة فعلاً
-    fetch(ENDPOINT, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify(payload)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data && data.success === true) {
-            // النجاح الحقيقي فقط عندما يؤكد السيرفر الاستقبال
-            btnText.innerHTML = "🎉 تم تسجيل طلبك بنجاح!";
-            submitBtn.style.background = "#10b981";
-
-            alert("شكراً لك! تم استقبال طلبك بنجاح، و سيتصل بك فريقنا قريباً لتأكيد المعلومات.");
-
-            document.getElementById("nm").value = "";
-            document.getElementById("ph").value = "";
-            document.getElementById("ad").value = "";
-
-            setTimeout(() => {
-                submitBtn.style.background = "";
-                resetButton("✅  أكّد طلبيتك الأن");
-            }, 3000);
-        } else {
-            // السيرفر رد لكن رفض الطلب
-            console.error("Server rejected:", data);
-            alert("عذراً، تعذّر تسجيل الطلب: " + (data && data.message ? data.message : "بيانات غير صالحة") + ". أعد المحاولة من فضلك.");
-            resetButton("❌ حدث خطأ، أعد المحاولة");
-        }
-    })
-    .catch(error => {
-        // فشل شبكة أو فشل في الوصول للسيرفر
-        console.error("Network error!", error);
-        alert("عذراً، حدث خطأ في الاتصال أثناء إرسال الطلب. تحقق من الإنترنت و أعد المحاولة.");
-        resetButton("❌ حدث خطأ، أعد المحاولة");
-    });
-});
-</script>
-      
-      <div class="trust-footer-meta">
-        <span>🔒 تخلّص عند الاستلام</span>
-        <span class="divider">•</span>
-        <span>🤫 توصيل سري وآمن لـ 69 ولاية</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-        
     </div>
 </section>
 

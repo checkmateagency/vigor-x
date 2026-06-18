@@ -3087,6 +3087,24 @@ header, .main-header {
   .hero-gold-pill{ min-height:0; font-size:14px; padding:12px 14px; }
 }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1017831547269400');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1017831547269400&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <div class="promo-bar">
@@ -3487,6 +3505,7 @@ document.getElementById("sendWa").addEventListener("click", function() {
     submitBtn.style.pointerEvents = "none";
     submitBtn.style.opacity = "0.7";
     btnText.innerHTML = "⏳ جاري إرسال طلبك...";
+    if (window.fbq) fbq('track', 'InitiateCheckout'); // checkout intent: valid data submitted
 
     // 8. تجهيز البيانات لإرسالها إلى Web3Forms
     const payload = {
@@ -3520,6 +3539,7 @@ document.getElementById("sendWa").addEventListener("click", function() {
         if (data && data.success === true) {
             // النجاح الحقيقي فقط عندما يؤكد السيرفر الاستقبال
             btnText.innerHTML = "🎉 تم تسجيل طلبك بنجاح!";
+            if (window.fbq) fbq('track', 'Lead'); // PRIMARY conversion: confirmed order
             submitBtn.style.background = "#10b981";
 
             alert("شكراً لك! تم استقبال طلبك بنجاح، و سيتصل بك فريقنا قريباً لتأكيد المعلومات.");
@@ -3894,42 +3914,9 @@ document.getElementById("sendWa").addEventListener("click", function() {
 </div>
 
     <script>
-        // عداد الاستعجال التنازلي التفاعلي (يعمل فقط إذا وُجدت عناصر العداد)
-        function countdown() {
-            const hrEl = document.getElementById('hr');
-            const minEl = document.getElementById('min');
-            const secEl = document.getElementById('sec');
-            if (!hrEl || !minEl || !secEl) return; // لا يوجد عداد في الصفحة
-
-            let hours = 1;
-            let minutes = 24;
-            let seconds = 59;
-
-            const timer = setInterval(() => {
-                if (seconds > 0) {
-                    seconds--;
-                } else {
-                    if (minutes > 0) {
-                        minutes--;
-                        seconds = 59;
-                    } else {
-                        if (hours > 0) {
-                            hours--;
-                            minutes = 59;
-                            seconds = 59;
-                        } else {
-                            clearInterval(timer);
-                        }
-                    }
-                }
-                hrEl.innerText = hours < 10 ? '0' + hours : hours;
-                minEl.innerText = minutes < 10 ? '0' + minutes : minutes;
-                secEl.innerText = seconds < 10 ? '0' + seconds : seconds;
-            }, 1000);
-        }
+        // (dead countdown timer removed — Meta compliance)
 
         document.addEventListener('DOMContentLoaded', () => {
-            countdown();
 
             // حماية ضد العناصر غير الموجودة لتجنّب توقف السكربت
             const leadForm = document.getElementById('leadForm');

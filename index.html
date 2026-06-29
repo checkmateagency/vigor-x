@@ -3539,7 +3539,7 @@ document.getElementById("sendWa").addEventListener("click", function() {
         if (data && data.success === true) {
             // النجاح الحقيقي فقط عندما يؤكد السيرفر الاستقبال
             btnText.innerHTML = "🎉 تم تسجيل طلبك بنجاح!";
-            if (window.fbq) fbq('track', 'Lead'); // PRIMARY conversion: confirmed order
+            if (window.fbq) fbq('track', 'Purchase', {value: 7990, currency: 'DZD'}); // PRIMARY conversion: confirmed order
             submitBtn.style.background = "#10b981";
 
             alert("شكراً لك! تم استقبال طلبك بنجاح، و سيتصل بك فريقنا قريباً لتأكيد المعلومات.");
